@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Use Claude Code: Beginner's Guide (2026) — AIGuideDZ</title>
+  <meta name="description" content="Learn how to install and use Claude Code, Anthropic's AI coding agent for the terminal. Setup, first commands, real examples and beginner tips — all in 10 minutes.">
+  <link rel="canonical" href="https://aiguidedz.com/articles/how-to-use-claude-code.html">
+  <meta property="og:title" content="How to Use Claude Code: Beginner's Guide (2026)">
+  <meta property="og:description" content="Install it, give it a task, and let AI write real code in your terminal.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Use Claude Code",
+    "description": "Install and use Claude Code, Anthropic's AI coding agent for the terminal.",
+    "step": [
+      {"@type": "HowToStep", "name": "Install Node.js"},
+      {"@type": "HowToStep", "name": "Install Claude Code via npm"},
+      {"@type": "HowToStep", "name": "Sign in and run your first task"}
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="../index.html">AI<span>Guide</span><span class="dz">DZ</span></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="best-free-ai-tools-for-students.html">AI Tools</a></li>
+      <li><a href="how-to-use-claude-code.html" class="active">Tutorials</a></li>
+      <li><a href="best-budget-laptops-for-students.html">Tech Guides</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="article-wrap">
+  <div class="breadcrumb"><a href="../index.html">Home</a> › AI Tutorials</div>
+  <h1>How to Use Claude Code: A Beginner's Guide (2026)</h1>
+  <div class="article-meta">
+    <span>✍️ AIGuideDZ Team</span><span>📅 Updated July 2026</span><span>📖 9 min read</span>
+  </div>
+
+  <p>Claude Code is Anthropic's AI coding agent that runs in your terminal. Instead of copy-pasting code between a chat window and your editor, you describe what you want — "add a dark mode toggle", "fix this failing test", "explain this codebase" — and Claude Code reads your files, writes the changes, and shows you exactly what it did.</p>
+  <p>This guide takes you from zero to your first working task in about 10 minutes. No prior experience with AI tools needed — basic familiarity with a terminal helps.</p>
+
+  <div class="toc">
+    <strong>📑 In this tutorial</strong>
+    <ol>
+      <li><a href="#what">What is Claude Code?</a></li>
+      <li><a href="#install">Installation (Windows, Mac, Linux)</a></li>
+      <li><a href="#first">Your first session</a></li>
+      <li><a href="#commands">Essential commands</a></li>
+      <li><a href="#examples">Real examples to try</a></li>
+      <li><a href="#tips">Beginner tips &amp; common mistakes</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </div>
+
+  <div class="ad-slot">Ad space — AdSense in-article unit</div>
+
+  <h2 id="what">What is Claude Code?</h2>
+  <p>Think of it as a junior developer living in your terminal. You give it a goal in plain English; it explores your project, plans, edits files, runs commands and tests, and reports back. Key differences from a chatbot:</p>
+  <ul>
+    <li><strong>It sees your real project.</strong> No copy-pasting code into a chat window.</li>
+    <li><strong>It takes actions.</strong> It edits files, runs your tests, and can use git — with your permission at each step.</li>
+    <li><strong>It iterates.</strong> If a test fails, it reads the error and fixes its own code.</li>
+  </ul>
+  <p>It's also not just for big projects — it's one of the best ways for beginners to <em>learn</em> to code, because you can ask "why?" about every change it makes.</p>
+
+  <h2 id="install">Installation</h2>
+  <h3>Step 1 — Install Node.js</h3>
+  <p>Claude Code installs via npm, which comes with Node.js. Download the LTS version from <strong>nodejs.org</strong> and install it. Verify in your terminal:</p>
+  <pre><code>node --version</code></pre>
+
+  <h3>Step 2 — Install Claude Code</h3>
+  <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+  <p>Works on macOS, Linux, and Windows.</p>
+
+  <h3>Step 3 — Start it and sign in</h3>
+  <p>Open your terminal <em>inside a project folder</em> (this matters — Claude Code works with the files around it) and run:</p>
+  <pre><code>cd my-project
+claude</code></pre>
+  <p>The first run walks you through signing in with a Claude account (Pro/Max subscription) or an Anthropic API key. After that, you land in an interactive prompt — just type what you want in plain English.</p>
+
+  <h2 id="first">Your first session</h2>
+  <p>Start with something safe and useful — ask it to explain the project:</p>
+  <pre><code>&gt; give me an overview of this codebase and how it's organized</code></pre>
+  <p>Then try a small real change:</p>
+  <pre><code>&gt; add input validation to the signup form and explain what you changed</code></pre>
+  <p>Claude Code will show you each file edit before or after it happens (depending on your permission settings) and summarize what it did. You stay in control: it asks before running commands that change things.</p>
+
+  <div class="callout"><strong>ℹ️ No project yet?</strong> Create an empty folder and say: <em>"build me a simple personal portfolio website with an about page and a projects page."</em> Watching it scaffold a project from nothing is the fastest way to understand what it can do.</div>
+
+  <h2 id="commands">Essential commands</h2>
+  <table>
+    <tr><th>Command</th><th>What it does</th></tr>
+    <tr><td><code>claude</code></td><td>Start an interactive session in the current folder</td></tr>
+    <tr><td><code>claude "fix the failing tests"</code></td><td>Start with a task immediately</td></tr>
+    <tr><td><code>/init</code></td><td>Generate a CLAUDE.md file describing your project (improves future sessions)</td></tr>
+    <tr><td><code>/clear</code></td><td>Reset the conversation context</td></tr>
+    <tr><td><code>/help</code></td><td>List all commands</td></tr>
+    <tr><td><code>Esc</code></td><td>Interrupt Claude while it's working</td></tr>
+  </table>
+
+  <h2 id="examples">Real examples to try</h2>
+  <ul>
+    <li><strong>Learn:</strong> "Explain what this function does line by line, like I'm new to Python."</li>
+    <li><strong>Debug:</strong> "The app crashes when I submit the form. Find out why and fix it."</li>
+    <li><strong>Build:</strong> "Add a search bar to the products page that filters as you type."</li>
+    <li><strong>Refactor:</strong> "This file is 800 lines. Split it into logical modules without changing behavior."</li>
+    <li><strong>Git:</strong> "Commit my changes with a good message describing what changed."</li>
+    <li><strong>Tests:</strong> "Write unit tests for the utils folder and run them."</li>
+  </ul>
+
+  <div class="ad-slot">Ad space — AdSense in-article unit</div>
+
+  <h2 id="tips">Beginner tips &amp; common mistakes</h2>
+  <ol>
+    <li><strong>Be specific about the outcome, not the method.</strong> "Make the header stay visible when scrolling" beats "add position: sticky to line 40".</li>
+    <li><strong>Work in small steps.</strong> One task per request gives better results than a giant wishlist.</li>
+    <li><strong>Use git.</strong> Commit before big changes so you can always roll back. Claude Code can do this for you — just ask.</li>
+    <li><strong>Run <code>/init</code> early.</strong> The CLAUDE.md file it creates teaches Claude your project's conventions, making every later session smarter.</li>
+    <li><strong>Ask "why".</strong> Every change is a learning opportunity: "explain why you chose this approach" turns the tool into a tutor.</li>
+    <li><strong>Review the diffs.</strong> You're the senior developer in this relationship — read what it changed before you ship it.</li>
+  </ol>
+
+  <h2 id="faq">FAQ</h2>
+  <h3>Is Claude Code free?</h3>
+  <p>It's included with Claude Pro and Max subscriptions, or you can pay per use with an Anthropic API key. Light personal use on a Pro plan is very affordable; check current pricing at anthropic.com.</p>
+  <h3>Do I need to know how to code?</h3>
+  <p>No — but you'll get more out of it if you learn as you go. Total beginners can build working projects by describing them; understanding the output helps you steer it.</p>
+  <h3>Is it safe to let AI edit my files?</h3>
+  <p>Claude Code asks permission before running commands and shows you every edit. Combined with git, you can always undo anything. Don't run it with auto-approve on a project you can't restore.</p>
+  <h3>Claude Code vs ChatGPT for coding?</h3>
+  <p>A chat window makes you the messenger between the AI and your files. An agent works on the files directly. For real projects, the agent wins — see our full <a href="chatgpt-vs-claude.html">ChatGPT vs Claude comparison</a>.</p>
+
+  <div class="verdict-box">
+    <h3>🏆 Bottom line</h3>
+    <p>Claude Code is the most beginner-friendly way to experience AI agents doing real work. Install it, open a project folder, and give it one small task — you'll understand the hype in about five minutes. <span class="stars">★★★★★</span></p>
+  </div>
+
+  <div class="ad-slot">Ad space — AdSense responsive unit</div>
+
+  <h2>Read next</h2>
+  <ul>
+    <li><a href="chatgpt-vs-claude.html">ChatGPT vs Claude: Which AI Should You Use?</a></li>
+    <li><a href="ai-prompts-for-excel-study-business.html">50+ AI Prompts for Excel, Study &amp; Business</a></li>
+    <li><a href="best-budget-laptops-for-students.html">Best Budget Laptops for Students</a></li>
+  </ul>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="../index.html" style="color:#fff">AI<span>Guide</span><span class="dz">DZ</span></a>
+      <p>Practical AI tutorials and tech guides for students and beginners. Learn the tools, skip the hype.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="best-free-ai-tools-for-students.html">Free AI Tools</a></li>
+        <li><a href="chatgpt-vs-claude.html">ChatGPT vs Claude</a></li>
+        <li><a href="how-to-use-claude-code.html">Claude Code Tutorial</a></li>
+        <li><a href="ai-prompts-for-excel-study-business.html">AI Prompts Library</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>More</h4>
+      <ul>
+        <li><a href="best-ai-apps-to-learn-english.html">Learn English with AI</a></li>
+        <li><a href="best-budget-laptops-for-students.html">Budget Laptops</a></li>
+        <li><a href="../about.html">About Us</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="../affiliate-disclosure.html">Affiliate Disclosure</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 AIGuideDZ.com — All rights reserved. As an Amazon Associate we earn from qualifying purchases.
+  </div>
+</footer>
+
+<script src="../js/lang.js"></script>
+</body>
+</html>
