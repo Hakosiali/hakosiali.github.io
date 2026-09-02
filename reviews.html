@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tool Reviews — Star Ratings for Every Tool We Cover — AIGuideDZ</title>
+  <meta name="description" content="Every AI tool AIGuideDZ has reviewed, with honest star ratings, one-line verdicts, and links to the full guide — ChatGPT, Claude, Gemini, and 15+ specialist tools.">
+  <link rel="canonical" href="https://aiguidedz.sialihako.workers.dev/reviews.html">
+  <link rel="alternate" hreflang="en" href="https://aiguidedz.sialihako.workers.dev/reviews.html">
+  <link rel="alternate" hreflang="ar" href="https://aiguidedz.sialihako.workers.dev/ar/reviews.html">
+  <meta property="og:title" content="AI Tool Reviews — Star Ratings for Every Tool We Cover">
+  <meta property="og:description" content="Honest star ratings and one-line verdicts for every AI tool we've tested.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://aiguidedz.sialihako.workers.dev/assets/og-image.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    .rv-tools { max-width: 900px; margin: 0 auto 1.5rem; padding: 0 1rem; }
+    .rv-search {
+      width: 100%; padding: .85rem 1.1rem; font-size: 1.05rem;
+      border: 2px solid #c7c9f7; border-radius: 10px; outline: none;
+    }
+    .rv-search:focus { border-color: var(--primary); }
+    .rv-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .9rem; }
+    .rv-filters button {
+      border: 1px solid #c7c9f7; background: #fff; color: #333;
+      padding: .35rem .9rem; border-radius: 999px; cursor: pointer; font-size: .9rem;
+    }
+    .rv-filters button.on { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .rv-grid { max-width: 900px; margin: 0 auto 3rem; padding: 0 1rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+    .rv-card {
+      border: 1px solid #e4e6f5; border-radius: 14px; padding: 1.3rem;
+      background: #fff; display: flex; flex-direction: column; gap: .5rem;
+    }
+    .rv-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+    .rv-card h3 { margin: 0; font-size: 1.08rem; color: #1e1b4b; }
+    .rv-cat {
+      font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; font-weight: 700;
+      color: var(--primary); background: var(--primary-light); padding: 3px 8px; border-radius: 999px; white-space: nowrap;
+    }
+    .rv-rating { display: flex; align-items: center; gap: 8px; }
+    .rv-rating .stars { font-size: 1.05rem; }
+    .rv-rating .num { font-size: .85rem; color: #888; font-weight: 600; }
+    .rv-verdict { font-size: .9rem; color: #555; flex-grow: 1; margin: 0; }
+    .rv-card a.rv-link { font-size: .88rem; font-weight: 700; margin-top: 4px; }
+    .no-results { text-align: center; color: #666; padding: 2rem 0; display: none; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">AI<span>Guide</span><span class="dz">DZ</span></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="guides.html">All Guides</a></li>
+      <li><a href="reviews.html" class="active">Reviews</a></li>
+      <li><a href="ai-tool-finder.html">Tool Finder</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:1.5rem;">
+  <h1>AI tool <em>reviews</em></h1>
+  <p>Every tool we've covered in depth, rated honestly — no tool gets 5 stars just because a brand paid for it. <a href="affiliate-disclosure.html">Our disclosure</a> explains how we make money without changing rankings.</p>
+</section>
+
+<div class="rv-tools">
+  <input class="rv-search" id="rvsearch" type="search" placeholder="🔍 Search tools… (e.g. Claude, Grammarly, Canva)" aria-label="Search reviews">
+  <div class="rv-filters" id="rvfilters">
+    <button class="on" data-cat="all">All</button>
+    <button data-cat="assistant">AI Assistants</button>
+    <button data-cat="study">Study Tools</button>
+    <button data-cat="productivity">Productivity</button>
+    <button data-cat="business">Business</button>
+    <button data-cat="creative">Creative</button>
+  </div>
+</div>
+
+<div class="rv-grid" id="rvgrid">
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>Claude</h3><span class="rv-cat">Assistant</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.7/5</span></div>
+    <p class="rv-verdict">Best-in-class for writing, analysis and code. Free tier's daily limit is the tightest of the majors.</p>
+    <a class="rv-link" href="articles/how-to-use-claude-beginners-guide.html">Read the full guide →</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>ChatGPT</h3><span class="rv-cat">Assistant</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.6/5</span></div>
+    <p class="rv-verdict">The most polished all-rounder — biggest feature set, voice mode and custom-bot ecosystem.</p>
+    <a class="rv-link" href="articles/how-to-use-chatgpt-beginners-guide.html">Read the full guide →</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>Gemini</h3><span class="rv-cat">Assistant</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.3/5</span></div>
+    <p class="rv-verdict">Unmatched Google integration and the most generous free tier of the three majors.</p>
+    <a class="rv-link" href="articles/how-to-use-gemini-beginners-guide.html">Read the full guide →</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>Claude Code</h3><span class="rv-cat">Assistant</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.6/5</span></div>
+    <p class="rv-verdict">A genuine step up from copy-pasting snippets — reads your project, edits files directly.</p>
+    <a class="rv-link" href="articles/how-to-use-claude-code.html">Read the full guide →</a>
+  </div>
+
+  <div class="rv-card" data-cat="study">
+    <div class="rv-card-top"><h3>NotebookLM</h3><span class="rv-cat">Study</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.8/5</span></div>
+    <p class="rv-verdict">Turns your own notes into a tutor — answers only from your sources, so invented facts are rare.</p>
+    <a class="rv-link" href="articles/how-to-use-notebooklm-for-studying.html">Read the full guide →</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>DeepSeek</h3><span class="rv-cat">Assistant</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.2/5</span></div>
+    <p class="rv-verdict">Free with no tight daily cap, and open-source. Real privacy trade-off on the hosted app.</p>
+    <a class="rv-link" href="articles/deepseek-vs-chatgpt-vs-claude.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>Perplexity</h3><span class="rv-cat">Assistant</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.3/5</span></div>
+    <p class="rv-verdict">Search built around citations — every answer shows its sources, unlike a general chatbot.</p>
+    <a class="rv-link" href="articles/how-to-use-perplexity-ai.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>GitHub Copilot</h3><span class="rv-cat">Assistant</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.1/5</span></div>
+    <p class="rv-verdict">The established in-editor autocomplete — suggests, you decide. Genuine free tier exists.</p>
+    <a class="rv-link" href="articles/best-ai-coding-assistants.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>Cursor</h3><span class="rv-cat">Assistant</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.4/5</span></div>
+    <p class="rv-verdict">The most polished AI-first editor — agentic power inside a familiar IDE feel.</p>
+    <a class="rv-link" href="articles/best-ai-coding-assistants.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="creative">
+    <div class="rv-card-top"><h3>Suno</h3><span class="rv-cat">Creative</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.3/5</span></div>
+    <p class="rv-verdict">Full songs with vocals from a text description — vocal realism is genuinely impressive.</p>
+    <a class="rv-link" href="articles/best-ai-music-voice-generators.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="creative">
+    <div class="rv-card-top"><h3>ElevenLabs</h3><span class="rv-cat">Creative</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.6/5</span></div>
+    <p class="rv-verdict">The standard for realistic AI voiceovers and voice cloning across dozens of languages.</p>
+    <a class="rv-link" href="articles/best-ai-music-voice-generators.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="study">
+    <div class="rv-card-top"><h3>Anki</h3><span class="rv-cat">Study</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.5/5</span></div>
+    <p class="rv-verdict">The gold standard for spaced repetition. Free on desktop and Android, one-time paid on iPhone.</p>
+    <a class="rv-link" href="articles/best-ai-flashcard-study-apps.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="study">
+    <div class="rv-card-top"><h3>Quizlet</h3><span class="rv-cat">Study</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.2/5</span></div>
+    <p class="rv-verdict">The easiest starting point — auto-generated decks and game modes, generous free tier.</p>
+    <a class="rv-link" href="articles/best-ai-flashcard-study-apps.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>Durable</h3><span class="rv-cat">Productivity</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">The fastest path from nothing to a live business website — free trial only, then paid.</p>
+    <a class="rv-link" href="articles/best-ai-website-builders.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>Teal</h3><span class="rv-cat">Productivity</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.1/5</span></div>
+    <p class="rv-verdict">Resume builder plus application tracker in one — generous free core features.</p>
+    <a class="rv-link" href="articles/best-ai-resume-builders.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="study">
+    <div class="rv-card-top"><h3>Photomath</h3><span class="rv-cat">Study</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">Fast camera-scan solutions for arithmetic through calculus. Deeper explanations are paywalled.</p>
+    <a class="rv-link" href="articles/best-ai-apps-for-math-homework.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="study">
+    <div class="rv-card-top"><h3>Khan Academy (Khanmigo)</h3><span class="rv-cat">Study</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.5/5</span></div>
+    <p class="rv-verdict">Genuine structured tutoring with Socratic questioning — not just an answer key.</p>
+    <a class="rv-link" href="articles/best-ai-apps-for-math-homework.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="study">
+    <div class="rv-card-top"><h3>Mathway</h3><span class="rv-cat">Study</span></div>
+    <div class="rv-rating"><span class="stars">★★★☆☆</span><span class="num">3.5/5</span></div>
+    <p class="rv-verdict">Solid for advanced/college math notation, but step-by-step breakdowns sit behind a paywall.</p>
+    <a class="rv-link" href="articles/best-ai-apps-for-math-homework.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>Notion AI</h3><span class="rv-cat">Productivity</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">Excellent if Notion's already your home base — AI features are a paid add-on though.</p>
+    <a class="rv-link" href="articles/best-ai-note-taking-apps.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>Obsidian</h3><span class="rv-cat">Productivity</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">Best for privacy and long-term knowledge building. Real learning curve, no cloud requirement.</p>
+    <a class="rv-link" href="articles/best-ai-note-taking-apps.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>Otter</h3><span class="rv-cat">Productivity</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">Reliable meeting and lecture transcription — free monthly minutes are genuinely generous.</p>
+    <a class="rv-link" href="articles/best-ai-note-taking-apps.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>Grammarly</h3><span class="rv-cat">Productivity</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.1/5</span></div>
+    <p class="rv-verdict">The specialist for final-pass polish. Free tier catches the basics; premium adds tone rewrites.</p>
+    <a class="rv-link" href="articles/how-to-use-ai-for-essay-writing.html">See how we use it →</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>Gamma</h3><span class="rv-cat">Productivity</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.4/5</span></div>
+    <p class="rv-verdict">Fastest path from idea to a presentable slide deck — generous free monthly credits.</p>
+    <a class="rv-link" href="articles/best-ai-presentation-makers.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>DeepL</h3><span class="rv-cat">Productivity</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.5/5</span></div>
+    <p class="rv-verdict">The most accurate free translator for nuance and tone — preserves document formatting too.</p>
+    <a class="rv-link" href="articles/best-free-ai-translation-tools.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="study">
+    <div class="rv-card-top"><h3>GPTZero</h3><span class="rv-cat">Study</span></div>
+    <div class="rv-rating"><span class="stars">★★★☆☆</span><span class="num">3.5/5</span></div>
+    <p class="rv-verdict">Useful first signal for AI-written text, but treat any score as a probability, not proof.</p>
+    <a class="rv-link" href="articles/best-ai-content-detectors.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="creative">
+    <div class="rv-card-top"><h3>Canva</h3><span class="rv-cat">Creative</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.5/5</span></div>
+    <p class="rv-verdict">Design without a designer. Free tier covers 95% of small-business and student needs.</p>
+    <a class="rv-link" href="articles/best-ai-tools-for-small-business.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="creative">
+    <div class="rv-card-top"><h3>CapCut</h3><span class="rv-cat">Creative</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">Best free AI editor for short-form video — captions and silence-cutting are free, not paywalled.</p>
+    <a class="rv-link" href="articles/best-free-ai-video-tools.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="creative">
+    <div class="rv-card-top"><h3>Clipchamp</h3><span class="rv-cat">Creative</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.1/5</span></div>
+    <p class="rv-verdict">The most honest free deal in video editing — no watermark, included free with Windows.</p>
+    <a class="rv-link" href="articles/best-free-ai-video-tools.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="business">
+    <div class="rv-card-top"><h3>Brevo</h3><span class="rv-cat">Business</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">Best free tier for starting email marketing — up to 300 emails/day at no cost.</p>
+    <a class="rv-link" href="articles/best-ai-tools-for-small-business.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="business">
+    <div class="rv-card-top"><h3>Fathom</h3><span class="rv-cat">Business</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.5/5</span></div>
+    <p class="rv-verdict">Free meeting notes and action items that are remarkably generous for a $0 tier.</p>
+    <a class="rv-link" href="articles/best-ai-tools-for-small-business.html">Read the full review →</a>
+  </div>
+
+  <div class="rv-card" data-cat="business">
+    <div class="rv-card-top"><h3>QuickBooks</h3><span class="rv-cat">Business</span></div>
+    <div class="rv-rating"><span class="stars">★★★☆☆</span><span class="num">3.5/5</span></div>
+    <p class="rv-verdict">Genuinely useful AI-assisted bookkeeping, but not cheap — Wave is the free alternative.</p>
+    <a class="rv-link" href="articles/best-ai-tools-for-small-business.html">Read the full review →</a>
+  </div>
+
+</div>
+<p class="no-results" id="rvnone">No tools match your search — try a different word.</p>
+
+<div class="ad-slot">Ad space — AdSense responsive unit</div>
+
+<section class="section section-alt">
+  <div class="container" style="max-width:700px;">
+    <div class="section-head">
+      <h2>Not sure which one you need?</h2>
+      <p>Answer two quick questions and get a personalized recommendation.</p>
+    </div>
+    <p style="text-align:center;">
+      <a class="btn btn-primary" href="ai-tool-finder.html">Take the 30-Second Quiz →</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="index.html" style="color:#fff">AI<span>Guide</span><span class="dz">DZ</span></a>
+      <p>Practical AI tutorials and tech guides for students and beginners. Learn the tools, skip the hype.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="articles/best-free-ai-tools-for-students.html">Free AI Tools</a></li>
+        <li><a href="articles/chatgpt-vs-claude.html">ChatGPT vs Claude</a></li>
+        <li><a href="guides.html">All Guides</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>More</h4>
+      <ul>
+        <li><a href="glossary.html">AI Glossary</a></li>
+        <li><a href="ai-tool-finder.html">Tool Finder Quiz</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 AIGuideDZ.com — All rights reserved.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var input = document.getElementById('rvsearch');
+  var filterWrap = document.getElementById('rvfilters');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.rv-card'));
+  var none = document.getElementById('rvnone');
+  var cat = 'all';
+
+  function apply() {
+    var q = input.value.trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function (el) {
+      var okCat = (cat === 'all') || (el.getAttribute('data-cat') === cat);
+      var okText = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
+      var show = okCat && okText;
+      el.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+    none.style.display = shown ? 'none' : 'block';
+  }
+
+  input.addEventListener('input', apply);
+  filterWrap.addEventListener('click', function (e) {
+    var btn = e.target.closest('button');
+    if (!btn) return;
+    filterWrap.querySelectorAll('button').forEach(function (b) { b.classList.remove('on'); });
+    btn.classList.add('on');
+    cat = btn.getAttribute('data-cat');
+    apply();
+  });
+})();
+</script>
+
+<script src="js/analytics.js"></script>
+<script src="js/lang.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مراجعات أدوات الذكاء الاصطناعي — تقييمات صادقة لكل أداة نغطيها — AIGuideDZ</title>
+  <meta name="description" content="كل أداة ذكاء اصطناعي راجعناها في AIGuideDZ، بتقييمات نجوم صادقة وأحكام من سطر واحد وروابط للدليل الكامل — ChatGPT وClaude وGemini وأكثر من 15 أداة متخصصة.">
+  <link rel="canonical" href="https://aiguidedz.sialihako.workers.dev/ar/reviews.html">
+  <link rel="alternate" hreflang="en" href="https://aiguidedz.sialihako.workers.dev/reviews.html">
+  <link rel="alternate" hreflang="ar" href="https://aiguidedz.sialihako.workers.dev/ar/reviews.html">
+  <meta property="og:title" content="مراجعات أدوات الذكاء الاصطناعي — تقييمات صادقة لكل أداة">
+  <meta property="og:description" content="تقييمات نجوم صادقة وأحكام مختصرة لكل أداة ذكاء اصطناعي اختبرناها.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://aiguidedz.sialihako.workers.dev/assets/og-image.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <style>
+    .rv-tools { max-width: 900px; margin: 0 auto 1.5rem; padding: 0 1rem; }
+    .rv-search {
+      width: 100%; padding: .85rem 1.1rem; font-size: 1.05rem;
+      border: 2px solid #c7c9f7; border-radius: 10px; outline: none;
+    }
+    .rv-search:focus { border-color: var(--primary); }
+    .rv-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .9rem; }
+    .rv-filters button {
+      border: 1px solid #c7c9f7; background: #fff; color: #333;
+      padding: .35rem .9rem; border-radius: 999px; cursor: pointer; font-size: .9rem;
+    }
+    .rv-filters button.on { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .rv-grid { max-width: 900px; margin: 0 auto 3rem; padding: 0 1rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+    .rv-card {
+      border: 1px solid #e4e6f5; border-radius: 14px; padding: 1.3rem;
+      background: #fff; display: flex; flex-direction: column; gap: .5rem;
+    }
+    .rv-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+    .rv-card h3 { margin: 0; font-size: 1.08rem; color: #1e1b4b; }
+    .rv-cat {
+      font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; font-weight: 700;
+      color: var(--primary); background: var(--primary-light); padding: 3px 8px; border-radius: 999px; white-space: nowrap;
+    }
+    .rv-rating { display: flex; align-items: center; gap: 8px; }
+    .rv-rating .stars { font-size: 1.05rem; }
+    .rv-rating .num { font-size: .85rem; color: #888; font-weight: 600; }
+    .rv-verdict { font-size: .9rem; color: #555; flex-grow: 1; margin: 0; }
+    .rv-card a.rv-link { font-size: .88rem; font-weight: 700; margin-top: 4px; }
+    .no-results { text-align: center; color: #666; padding: 2rem 0; display: none; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">AI<span>Guide</span><span class="dz">DZ</span></a>
+    <button class="nav-toggle" aria-label="القائمة" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="best-free-ai-tools-for-students.html">أدوات الذكاء الاصطناعي</a></li>
+      <li><a href="reviews.html" class="active">المراجعات</a></li>
+      <li><a href="../about.html">من نحن</a></li>
+      <li><a href="../contact.html">اتصل بنا</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:1.5rem;">
+  <h1>مراجعات <em>أدوات الذكاء الاصطناعي</em></h1>
+  <p>كل أداة تناولناها بعمق، مُقيَّمة بصدق — لا أداة تحصل على 5 نجوم لمجرد أن علامة تجارية دفعت مقابل ذلك. <a href="../affiliate-disclosure.html">إفصاحنا</a> يشرح كيف نربح دون التأثير على الترتيب.</p>
+</section>
+
+<div class="rv-tools">
+  <input class="rv-search" id="rvsearch" type="search" placeholder="🔍 ابحث عن أداة… (مثل Claude أو Grammarly أو Canva)" aria-label="البحث في المراجعات">
+  <div class="rv-filters" id="rvfilters">
+    <button class="on" data-cat="all">الكل</button>
+    <button data-cat="assistant">مساعدو الذكاء الاصطناعي</button>
+    <button data-cat="study">أدوات الدراسة</button>
+    <button data-cat="productivity">الإنتاجية</button>
+    <button data-cat="business">الأعمال</button>
+    <button data-cat="creative">إبداعي</button>
+  </div>
+</div>
+
+<div class="rv-grid" id="rvgrid">
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>Claude</h3><span class="rv-cat">مساعد</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.7/5</span></div>
+    <p class="rv-verdict">الأفضل في فئته للكتابة والتحليل والبرمجة. الحد اليومي في الخطة المجانية هو الأضيق بين الكبار.</p>
+    <a class="rv-link" href="../articles/how-to-use-claude-beginners-guide.html">اقرأ الدليل الكامل ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>ChatGPT</h3><span class="rv-cat">مساعد</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.6/5</span></div>
+    <p class="rv-verdict">الأكثر اكتمالاً كمساعد عام — أكبر مجموعة ميزات ووضع صوتي ومنظومة روبوتات مخصصة.</p>
+    <a class="rv-link" href="../articles/how-to-use-chatgpt-beginners-guide.html">اقرأ الدليل الكامل ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>Gemini</h3><span class="rv-cat">مساعد</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.3/5</span></div>
+    <p class="rv-verdict">تكامل لا مثيل له مع تطبيقات Google وأسخى خطة مجانية بين الثلاثة الكبار.</p>
+    <a class="rv-link" href="../articles/how-to-use-gemini-beginners-guide.html">اقرأ الدليل الكامل ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>Claude Code</h3><span class="rv-cat">مساعد</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.6/5</span></div>
+    <p class="rv-verdict">تطور حقيقي عن نسخ ولصق الأكواد — يقرأ مشروعك ويعدّل الملفات مباشرة.</p>
+    <a class="rv-link" href="../articles/how-to-use-claude-code.html">اقرأ الدليل الكامل ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="study">
+    <div class="rv-card-top"><h3>NotebookLM</h3><span class="rv-cat">دراسة</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.8/5</span></div>
+    <p class="rv-verdict">يحوّل ملاحظاتك إلى معلم خاص — يجيب فقط من مصادرك، فالمعلومات المختلقة نادرة.</p>
+    <a class="rv-link" href="../articles/how-to-use-notebooklm-for-studying.html">اقرأ الدليل الكامل ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>DeepSeek</h3><span class="rv-cat">مساعد</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.2/5</span></div>
+    <p class="rv-verdict">مجاني بلا سقف يومي ضيق، ومفتوح المصدر. مقايضة حقيقية في الخصوصية عند استخدام التطبيق المستضاف.</p>
+    <a class="rv-link" href="../articles/deepseek-vs-chatgpt-vs-claude.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>Perplexity</h3><span class="rv-cat">مساعد</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.3/5</span></div>
+    <p class="rv-verdict">بحث مبني على الاستشهاد بالمصادر — كل إجابة تُظهر مصادرها، بخلاف روبوتات المحادثة العامة.</p>
+    <a class="rv-link" href="../articles/how-to-use-perplexity-ai.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>GitHub Copilot</h3><span class="rv-cat">مساعد</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.1/5</span></div>
+    <p class="rv-verdict">الإكمال التلقائي الراسخ داخل المحرر — يقترح وأنت تقرر. خطة مجانية حقيقية متوفرة.</p>
+    <a class="rv-link" href="../articles/best-ai-coding-assistants.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="assistant">
+    <div class="rv-card-top"><h3>Cursor</h3><span class="rv-cat">مساعد</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.4/5</span></div>
+    <p class="rv-verdict">أكثر محررات الذكاء الاصطناعي صقلاً — قوة وكيلية داخل واجهة IDE مألوفة.</p>
+    <a class="rv-link" href="../articles/best-ai-coding-assistants.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="creative">
+    <div class="rv-card-top"><h3>Suno</h3><span class="rv-cat">إبداعي</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.3/5</span></div>
+    <p class="rv-verdict">أغانٍ كاملة بأصوات من وصف نصي — واقعية الصوت مبهرة فعلاً.</p>
+    <a class="rv-link" href="../articles/best-ai-music-voice-generators.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="creative">
+    <div class="rv-card-top"><h3>ElevenLabs</h3><span class="rv-cat">إبداعي</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.6/5</span></div>
+    <p class="rv-verdict">المعيار للتعليق الصوتي الواقعي واستنساخ الصوت بعشرات اللغات.</p>
+    <a class="rv-link" href="../articles/best-ai-music-voice-generators.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="study">
+    <div class="rv-card-top"><h3>Photomath</h3><span class="rv-cat">دراسة</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">حلول سريعة بمسح الكاميرا من الحساب إلى التفاضل والتكامل. الشروحات الأعمق مدفوعة.</p>
+    <a class="rv-link" href="../articles/best-ai-apps-for-math-homework.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="study">
+    <div class="rv-card-top"><h3>Khan Academy (Khanmigo)</h3><span class="rv-cat">دراسة</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.5/5</span></div>
+    <p class="rv-verdict">تدريس منظم حقيقي بأسلوب سقراطي في الأسئلة — لا مجرد مفتاح إجابات.</p>
+    <a class="rv-link" href="../articles/best-ai-apps-for-math-homework.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="study">
+    <div class="rv-card-top"><h3>Mathway</h3><span class="rv-cat">دراسة</span></div>
+    <div class="rv-rating"><span class="stars">★★★☆☆</span><span class="num">3.5/5</span></div>
+    <p class="rv-verdict">جيد للرياضيات المتقدمة والجامعية، لكن الحلول التفصيلية خلف جدار الدفع.</p>
+    <a class="rv-link" href="../articles/best-ai-apps-for-math-homework.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>Notion AI</h3><span class="rv-cat">إنتاجية</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">ممتاز إذا كان Notion قاعدتك الأساسية أصلاً — ميزات الذكاء الاصطناعي إضافة مدفوعة.</p>
+    <a class="rv-link" href="../articles/best-ai-note-taking-apps.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>Obsidian</h3><span class="rv-cat">إنتاجية</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">الأفضل للخصوصية وبناء قاعدة معرفة طويلة الأمد. منحنى تعلم حقيقي، بلا حاجة للسحابة.</p>
+    <a class="rv-link" href="../articles/best-ai-note-taking-apps.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>Otter</h3><span class="rv-cat">إنتاجية</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">تفريغ صوتي موثوق للاجتماعات والمحاضرات — الدقائق المجانية الشهرية سخية فعلاً.</p>
+    <a class="rv-link" href="../articles/best-ai-note-taking-apps.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>Grammarly</h3><span class="rv-cat">إنتاجية</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.1/5</span></div>
+    <p class="rv-verdict">المتخصص في الصقل النهائي. الخطة المجانية تلتقط الأساسيات؛ المدفوعة تضيف إعادة صياغة النبرة.</p>
+    <a class="rv-link" href="../articles/how-to-use-ai-for-essay-writing.html">شاهد كيف نستخدمه ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>Gamma</h3><span class="rv-cat">إنتاجية</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.4/5</span></div>
+    <p class="rv-verdict">أسرع طريق من فكرة إلى عرض تقديمي جاهز — رصيد شهري مجاني سخي.</p>
+    <a class="rv-link" href="../articles/best-ai-presentation-makers.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="productivity">
+    <div class="rv-card-top"><h3>DeepL</h3><span class="rv-cat">إنتاجية</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.5/5</span></div>
+    <p class="rv-verdict">أدق مترجم مجاني للفروق الدقيقة والنبرة — يحافظ على تنسيق المستندات أيضاً.</p>
+    <a class="rv-link" href="../articles/best-free-ai-translation-tools.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="study">
+    <div class="rv-card-top"><h3>GPTZero</h3><span class="rv-cat">دراسة</span></div>
+    <div class="rv-rating"><span class="stars">★★★☆☆</span><span class="num">3.5/5</span></div>
+    <p class="rv-verdict">إشارة أولى مفيدة للنص المكتوب بالذكاء الاصطناعي، لكن عامل أي نتيجة كاحتمال لا كدليل قاطع.</p>
+    <a class="rv-link" href="../articles/best-ai-content-detectors.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="creative">
+    <div class="rv-card-top"><h3>Canva</h3><span class="rv-cat">إبداعي</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.5/5</span></div>
+    <p class="rv-verdict">تصميم بلا مصمم. الخطة المجانية تغطي 95٪ من احتياجات الطلبة والشركات الصغيرة.</p>
+    <a class="rv-link" href="../articles/best-ai-tools-for-small-business.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="creative">
+    <div class="rv-card-top"><h3>CapCut</h3><span class="rv-cat">إبداعي</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">أفضل محرر ذكاء اصطناعي مجاني للفيديو القصير — الترجمة وقص الصمت مجانيان لا مدفوعان.</p>
+    <a class="rv-link" href="../articles/best-free-ai-video-tools.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="creative">
+    <div class="rv-card-top"><h3>Clipchamp</h3><span class="rv-cat">إبداعي</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.1/5</span></div>
+    <p class="rv-verdict">أصدق صفقة مجانية في تحرير الفيديو — بلا علامة مائية، ومضمّن مجاناً مع Windows.</p>
+    <a class="rv-link" href="../articles/best-free-ai-video-tools.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="business">
+    <div class="rv-card-top"><h3>Brevo</h3><span class="rv-cat">أعمال</span></div>
+    <div class="rv-rating"><span class="stars">★★★★☆</span><span class="num">4.0/5</span></div>
+    <p class="rv-verdict">أفضل خطة مجانية لبدء التسويق عبر البريد — حتى 300 رسالة يومياً بلا تكلفة.</p>
+    <a class="rv-link" href="../articles/best-ai-tools-for-small-business.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="business">
+    <div class="rv-card-top"><h3>Fathom</h3><span class="rv-cat">أعمال</span></div>
+    <div class="rv-rating"><span class="stars">★★★★★</span><span class="num">4.5/5</span></div>
+    <p class="rv-verdict">ملاحظات اجتماعات ومهام مجانية سخية بشكل لافت لخطة بسعر صفر.</p>
+    <a class="rv-link" href="../articles/best-ai-tools-for-small-business.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+  <div class="rv-card" data-cat="business">
+    <div class="rv-card-top"><h3>QuickBooks</h3><span class="rv-cat">أعمال</span></div>
+    <div class="rv-rating"><span class="stars">★★★☆☆</span><span class="num">3.5/5</span></div>
+    <p class="rv-verdict">محاسبة مدعومة بالذكاء الاصطناعي مفيدة فعلاً، لكنها ليست رخيصة — Wave هو البديل المجاني.</p>
+    <a class="rv-link" href="../articles/best-ai-tools-for-small-business.html">اقرأ المراجعة الكاملة ←</a>
+  </div>
+
+</div>
+<p class="no-results" id="rvnone">لا توجد أدوات مطابقة لبحثك — جرّب كلمة أخرى.</p>
+
+<div class="ad-slot">مساحة إعلانية — AdSense</div>
+
+<section class="section section-alt">
+  <div class="container" style="max-width:700px;">
+    <div class="section-head">
+      <h2>غير متأكد من الأداة التي تحتاجها؟</h2>
+      <p>أجب عن سؤالين سريعين واحصل على توصية مخصصة.</p>
+    </div>
+    <p style="text-align:center;">
+      <a class="btn btn-primary" href="../ai-tool-finder.html">جرّب الاختبار التفاعلي ←</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="index.html" style="color:#fff">AI<span>Guide</span><span class="dz">DZ</span></a>
+      <p>دروس عملية في الذكاء الاصطناعي وأدلة تقنية للطلبة والمبتدئين. تعلّم الأدوات وتجاوز الضجيج.</p>
+    </div>
+    <div>
+      <h4>أدلة</h4>
+      <ul>
+        <li><a href="best-free-ai-tools-for-students.html">أدوات ذكاء اصطناعي مجانية</a></li>
+        <li><a href="chatgpt-vs-claude.html">ChatGPT ضد Claude</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>المزيد</h4>
+      <ul>
+        <li><a href="../ai-tool-finder.html">اختبار اختيار الأداة</a></li>
+        <li><a href="../about.html">من نحن</a></li>
+        <li><a href="../contact.html">اتصل بنا</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>قانوني</h4>
+      <ul>
+        <li><a href="../privacy-policy.html">سياسة الخصوصية</a></li>
+        <li><a href="../affiliate-disclosure.html">إفصاح الشراكات</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 AIGuideDZ.com — جميع الحقوق محفوظة.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var input = document.getElementById('rvsearch');
+  var filterWrap = document.getElementById('rvfilters');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.rv-card'));
+  var none = document.getElementById('rvnone');
+  var cat = 'all';
+
+  function apply() {
+    var q = input.value.trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function (el) {
+      var okCat = (cat === 'all') || (el.getAttribute('data-cat') === cat);
+      var okText = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
+      var show = okCat && okText;
+      el.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+    none.style.display = shown ? 'none' : 'block';
+  }
+
+  input.addEventListener('input', apply);
+  filterWrap.addEventListener('click', function (e) {
+    var btn = e.target.closest('button');
+    if (!btn) return;
+    filterWrap.querySelectorAll('button').forEach(function (b) { b.classList.remove('on'); });
+    btn.classList.add('on');
+    cat = btn.getAttribute('data-cat');
+    apply();
+  });
+})();
+</script>
+
+<script src="../js/analytics.js"></script>
+<script src="../js/lang.js"></script>
+</body>
+</html>

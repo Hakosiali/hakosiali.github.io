@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Write Better AI Prompts: Beginner's Guide to Prompt Engineering (2026) — AIGuideDZ</title>
+  <meta name="description" content="Learn prompt engineering the simple way: the 4-part prompt formula, 7 techniques that instantly improve ChatGPT, Claude and Gemini answers, and mistakes to avoid.">
+  <link rel="canonical" href="https://aiguidedz.sialihako.workers.dev/articles/how-to-write-better-ai-prompts.html">
+  <meta property="og:title" content="How to Write Better AI Prompts: Beginner's Guide to Prompt Engineering">
+  <meta property="og:description" content="The 4-part prompt formula and 7 techniques that instantly improve your AI results.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://aiguidedz.sialihako.workers.dev/assets/og-image.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Write Better AI Prompts: Beginner's Guide to Prompt Engineering (2026)",
+    "datePublished": "2026-07-31",
+    "dateModified": "2026-07-31",
+    "author": {"@type": "Organization", "name": "AIGuideDZ"}
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://aiguidedz.sialihako.workers.dev/"}, {"@type": "ListItem", "position": 2, "name": "AI Tutorials", "item": "https://aiguidedz.sialihako.workers.dev/guides.html"}, {"@type": "ListItem", "position": 3, "name": "How to Write Better AI Prompts: Beginner's Guide to Prompt Engineering"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do prompts work the same in ChatGPT, Claude and Gemini?", "acceptedAnswer": {"@type": "Answer", "text": "The principles above work identically in all of them. Differences show up only at the edges — see our ChatGPT vs Claude and ChatGPT vs Gemini comparisons for which to pick."}}, {"@type": "Question", "name": "Is \"prompt engineer\" a real job?", "acceptedAnswer": {"@type": "Answer", "text": "As a standalone title it's fading, but prompting is now a baseline skill in marketing, development, analysis and admin roles — like Excel was in 2005."}}, {"@type": "Question", "name": "Should I use prompt marketplaces?", "acceptedAnswer": {"@type": "Answer", "text": "Rarely worth paying for. The 4-part formula plus iteration beats almost any purchased mega-prompt."}}]}
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="../index.html">AI<span>Guide</span><span class="dz">DZ</span></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../guides.html">All Guides</a></li>
+      <li><a href="best-free-ai-tools-for-students.html">AI Tools</a></li>
+      <li><a href="how-to-use-claude-code.html" class="active">Tutorials</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="article-wrap">
+  <div class="breadcrumb"><a href="../index.html">Home</a> › AI Tutorials</div>
+  <h1>How to Write Better AI Prompts: Beginner's Guide to Prompt Engineering</h1>
+  <div class="article-meta">
+    <span>✍️ AIGuideDZ Team</span><span>📅 Updated July 2026</span><span>📖 11 min read</span>
+  </div>
+
+  <p>Two people ask an AI the same question. One gets a generic paragraph; the other gets exactly what they needed, formatted and ready to use. The difference isn't the AI — it's the prompt. The good news: prompting well is a skill you can learn in an afternoon, and it works the same in ChatGPT, Claude and Gemini.</p>
+  <p>This guide gives you the formula, seven techniques with before/after examples, and the mistakes that quietly ruin your results.</p>
+
+  <div class="toc">
+    <strong>📑 In this guide</strong>
+    <ol>
+      <li><a href="#formula">The 4-part prompt formula</a></li>
+      <li><a href="#techniques">7 techniques that instantly help</a></li>
+      <li><a href="#mistakes">5 mistakes to avoid</a></li>
+      <li><a href="#templates">Copy-paste templates</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </div>
+
+  <div class="ad-slot">Ad space — AdSense in-article unit</div>
+
+  <h2 id="formula">The 4-part prompt formula</h2>
+  <p>Almost every great prompt contains the same four ingredients. Memorize this and you're ahead of 90% of users:</p>
+  <ol>
+    <li><strong>Role</strong> — who the AI should act as. <em>"You are an experienced study coach…"</em></li>
+    <li><strong>Task</strong> — what exactly you want, with specifics. <em>"…create a 2-week revision plan for my biology exam…"</em></li>
+    <li><strong>Context</strong> — what the AI needs to know. <em>"…I have 90 minutes per day, these 6 chapters, and I struggle with genetics…"</em></li>
+    <li><strong>Format</strong> — how the answer should look. <em>"…as a day-by-day table with a daily 10-minute review task."</em></li>
+  </ol>
+  <div class="callout tip"><strong>💡 Before/after:</strong> "Help me revise biology" → generic advice. The full 4-part version above → a personalized, usable plan on the first try. Same AI, same effort, completely different result.</div>
+
+  <h2 id="techniques">7 techniques that instantly improve your results</h2>
+
+  <h3>1. Show an example (few-shot prompting)</h3>
+  <p>If you want a specific style, paste an example of it. <em>"Here's an email I wrote that has the tone I want: [paste]. Write a new email to a professor asking for a deadline extension in the same tone."</em> Examples beat descriptions every time.</p>
+
+  <h3>2. Give it an out</h3>
+  <p>Tell the AI it's allowed to say it doesn't know: <em>"If you're not sure, say so instead of guessing."</em> This measurably cuts down made-up facts — essential for research and citations.</p>
+
+  <h3>3. Ask for structure before content</h3>
+  <p>For anything long (essay, report, presentation), ask for an outline first, edit the outline, <em>then</em> ask it to write. You'll steer the result with far less rewriting.</p>
+
+  <h3>4. Set constraints</h3>
+  <p>Word counts, reading level, what to exclude: <em>"Under 200 words. No jargon. Don't mention pricing."</em> Constraints are the difference between a draft you use and a draft you delete.</p>
+
+  <h3>5. Iterate — don't restart</h3>
+  <p>The first answer is a first draft. Reply with corrections: <em>"Good, but make point 2 more specific and drop point 4."</em> Each round takes seconds and compounds. Restarting from scratch throws away the context you just built.</p>
+
+  <h3>6. Ask it to critique itself</h3>
+  <p><em>"Review your answer above. What's weak, missing or wrong? Then give an improved version."</em> Surprisingly effective — models are better editors than first-drafters.</p>
+
+  <h3>7. Use "think step by step" for anything with logic</h3>
+  <p>Math, planning, debugging, decisions: adding <em>"work through this step by step before giving your final answer"</em> makes reasoning visible so you can spot exactly where it went wrong — and it often just gets the answer right more often.</p>
+
+  <div class="ad-slot">Ad space — AdSense in-article unit</div>
+
+  <h2 id="mistakes">5 mistakes that ruin your results</h2>
+  <ul>
+    <li><strong>Vague asks.</strong> "Make this better" forces the AI to guess what "better" means. Say what to improve: clarity? length? tone?</li>
+    <li><strong>Kitchen-sink prompts.</strong> Ten instructions in one message means some get ignored. Break big jobs into steps.</li>
+    <li><strong>No audience.</strong> "Explain photosynthesis" — to a 10-year-old or a university student? Always name the reader.</li>
+    <li><strong>Trusting facts blindly.</strong> AI states wrong things confidently. Verify names, numbers, dates and citations before using them anywhere real.</li>
+    <li><strong>One-and-done.</strong> Accepting the first answer. The best results almost always come on round two or three.</li>
+  </ul>
+
+  <h2 id="templates">Copy-paste templates</h2>
+  <p><strong>Study:</strong> <em>"You are a patient tutor. Explain [topic] to a [level] student using an everyday analogy, then give me 5 practice questions from easy to hard. After I answer, tell me what I got wrong and why."</em></p>
+  <p><strong>Email:</strong> <em>"Write a [formal/friendly] email to [person] about [situation]. Goal: [outcome]. Under 150 words, no filler phrases, end with a clear next step."</em></p>
+  <p><strong>Summarize:</strong> <em>"Summarize this [document] in 5 bullet points a busy manager can read in 30 seconds, then list any deadlines or action items separately: [paste]."</em></p>
+  <p><strong>Decide:</strong> <em>"I'm choosing between [A] and [B]. My priorities are [X, Y, Z]. Compare them in a table against my priorities, then recommend one and explain the trade-off I'm accepting."</em></p>
+  <p>Want 50+ more, organized by use case? See our full <a href="ai-prompts-for-excel-study-business.html">AI prompts library for Excel, study &amp; business</a>.</p>
+
+  <h2 id="faq">FAQ</h2>
+  <p><strong>Do prompts work the same in ChatGPT, Claude and Gemini?</strong> The principles above work identically in all of them. Differences show up only at the edges — see our <a href="chatgpt-vs-claude.html">ChatGPT vs Claude</a> and <a href="chatgpt-vs-gemini.html">ChatGPT vs Gemini</a> comparisons for which to pick.</p>
+  <p><strong>Is "prompt engineer" a real job?</strong> As a standalone title it's fading, but prompting is now a baseline skill in marketing, development, analysis and admin roles — like Excel was in 2005.</p>
+  <p><strong>Should I use prompt marketplaces?</strong> Rarely worth paying for. The 4-part formula plus iteration beats almost any purchased mega-prompt.</p>
+
+  <div class="verdict-box">
+    <h3>📄 Keep this formula handy</h3>
+    <p>Get the 4-part formula plus 50+ ready prompts in one free PDF — print it or keep it open while you work. <a href="../free-prompt-cheatsheet.html">Get the free cheat sheet →</a></p>
+  </div>
+
+  <div class="ad-slot">Ad space — AdSense responsive unit</div>
+
+  <h2>Read next</h2>
+  <ul>
+    <li><a href="ai-prompts-for-excel-study-business.html">50+ AI Prompts for Excel, Study &amp; Business</a></li>
+    <li><a href="how-to-use-chatgpt-beginners-guide.html">How to Use ChatGPT: Complete Beginner's Guide</a></li>
+    <li><a href="best-free-ai-tools-for-students.html">10 Best Free AI Tools for Students</a></li>
+  </ul>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="../index.html" style="color:#fff">AI<span>Guide</span><span class="dz">DZ</span></a>
+      <p>Practical AI tutorials and tech guides for students and beginners. Learn the tools, skip the hype.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="best-free-ai-tools-for-students.html">Free AI Tools</a></li>
+        <li><a href="chatgpt-vs-claude.html">ChatGPT vs Claude</a></li>
+        <li><a href="how-to-use-claude-code.html">Claude Code Tutorial</a></li>
+        <li><a href="ai-prompts-for-excel-study-business.html">AI Prompts Library</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>More</h4>
+      <ul>
+        <li><a href="best-ai-apps-to-learn-english.html">Learn English with AI</a></li>
+        <li><a href="best-budget-laptops-for-students.html">Budget Laptops</a></li>
+        <li><a href="../about.html">About Us</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="../affiliate-disclosure.html">Affiliate Disclosure</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 AIGuideDZ.com — All rights reserved. As an Amazon Associate we earn from qualifying purchases.
+  </div>
+</footer>
+
+<script src="../js/analytics.js"></script>
+<script src="../js/lang.js"></script>
+</body>
+</html>

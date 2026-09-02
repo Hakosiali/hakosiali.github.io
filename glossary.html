@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Glossary — Plain-English Definitions of AI Terms — AIGuideDZ</title>
+  <meta name="description" content="What does hallucination, token, LLM, agentic, or prompt engineering actually mean? A plain-English AI glossary with 30+ terms, searchable, with links to full guides.">
+  <link rel="canonical" href="https://aiguidedz.sialihako.workers.dev/glossary.html">
+  <link rel="alternate" hreflang="en" href="https://aiguidedz.sialihako.workers.dev/glossary.html">
+  <meta property="og:title" content="AI Glossary — Plain-English Definitions of AI Terms">
+  <meta property="og:description" content="What does hallucination, token, LLM or agentic actually mean? 30+ terms, plainly explained.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://aiguidedz.sialihako.workers.dev/assets/og-image.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "DefinedTermSet", "name": "AI Glossary", "description": "Plain-English definitions of common AI terms."}
+  </script>
+  <style>
+    .gl-tools { max-width: 800px; margin: 0 auto 1.5rem; padding: 0 1rem; }
+    .gl-search {
+      width: 100%; padding: .85rem 1.1rem; font-size: 1.05rem;
+      border: 2px solid #c7c9f7; border-radius: 10px; outline: none;
+    }
+    .gl-search:focus { border-color: var(--primary); }
+    .gl-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .9rem; }
+    .gl-filters button {
+      border: 1px solid #c7c9f7; background: #fff; color: #333;
+      padding: .35rem .9rem; border-radius: 999px; cursor: pointer; font-size: .9rem;
+    }
+    .gl-filters button.on { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .gl-list { max-width: 800px; margin: 0 auto 3rem; padding: 0 1rem; display: grid; gap: .9rem; }
+    .gl-term {
+      border: 1px solid #e4e6f5; border-radius: 12px; padding: 1.1rem 1.3rem; background: #fff;
+    }
+    .gl-term-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .gl-term h3 { margin: 0; font-size: 1.08rem; color: #1e1b4b; }
+    .gl-cat {
+      font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; font-weight: 700;
+      color: var(--primary); background: var(--primary-light); padding: 3px 8px; border-radius: 999px; white-space: nowrap;
+    }
+    .gl-def { font-size: .92rem; color: #444; margin: .5rem 0 0; line-height: 1.55; }
+    .gl-term a.gl-link { font-size: .85rem; font-weight: 700; }
+    .no-results { text-align: center; color: #666; padding: 2rem 0; display: none; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">AI<span>Guide</span><span class="dz">DZ</span></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="guides.html">All Guides</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="ai-tool-finder.html">Tool Finder</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:1.5rem;">
+  <h1>AI <em>glossary</em></h1>
+  <p>What does "hallucination," "token," or "agentic" actually mean? Plain-English definitions, no jargon explaining jargon.</p>
+</section>
+
+<div class="gl-tools">
+  <input class="gl-search" id="glsearch" type="search" placeholder="🔍 Search terms… (e.g. hallucination, token, RAG)" aria-label="Search glossary">
+  <div class="gl-filters" id="glfilters">
+    <button class="on" data-cat="all">All</button>
+    <button data-cat="basics">Model Basics</button>
+    <button data-cat="prompting">Prompting</button>
+    <button data-cat="features">Products &amp; Features</button>
+    <button data-cat="trust">Trust &amp; Safety</button>
+  </div>
+</div>
+
+<div class="gl-list" id="gllist">
+
+  <div class="gl-term" data-cat="basics">
+    <div class="gl-term-top"><h3>LLM (Large Language Model)</h3><span class="gl-cat">Basics</span></div>
+    <p class="gl-def">The technology behind ChatGPT, Claude and Gemini — a model trained on huge amounts of text that predicts what words should come next, which turns out to be enough to hold conversations, write code and answer questions. "LLM" and "AI chatbot" are used almost interchangeably today.</p>
+  </div>
+
+  <div class="gl-term" data-cat="basics">
+    <div class="gl-term-top"><h3>Hallucination</h3><span class="gl-cat">Basics</span></div>
+    <p class="gl-def">When an AI states something false with total confidence — an invented citation, a wrong date, a fabricated fact — because it's generating plausible-sounding text, not looking facts up in a database. The single most important thing to know before trusting any AI output for real work.</p>
+  </div>
+
+  <div class="gl-term" data-cat="basics">
+    <div class="gl-term-top"><h3>Token</h3><span class="gl-cat">Basics</span></div>
+    <p class="gl-def">The small chunk of text an AI actually processes — roughly ¾ of a word on average. Free tiers and pricing are often measured in tokens, and a "context window" (see below) is measured in them too.</p>
+  </div>
+
+  <div class="gl-term" data-cat="basics">
+    <div class="gl-term-top"><h3>Context window</h3><span class="gl-cat">Basics</span></div>
+    <p class="gl-def">How much text an AI can "hold in mind" at once — your whole conversation, plus any uploaded document. A larger context window is why some assistants (like Claude) handle very long documents better than others without losing track of earlier parts.</p>
+  </div>
+
+  <div class="gl-term" data-cat="basics">
+    <div class="gl-term-top"><h3>Training data</h3><span class="gl-cat">Basics</span></div>
+    <p class="gl-def">The enormous collection of text (and sometimes images, audio, code) a model learned from before it was released. It's why models have opinions, style and knowledge — and also why they can repeat biases or errors present in that data.</p>
+  </div>
+
+  <div class="gl-term" data-cat="basics">
+    <div class="gl-term-top"><h3>Training cutoff</h3><span class="gl-cat">Basics</span></div>
+    <p class="gl-def">The date after which a model has no built-in knowledge — it simply wasn't trained on anything published after that point. This is exactly why "web search" or "Deep Research" modes exist: to fill the gap between the cutoff and today.</p>
+  </div>
+
+  <div class="gl-term" data-cat="basics">
+    <div class="gl-term-top"><h3>Parameters</h3><span class="gl-cat">Basics</span></div>
+    <p class="gl-def">Roughly, the number of adjustable "knobs" a model has learned to set during training — often used as a rough (imperfect) proxy for a model's raw capability. More parameters usually means more capable, but also slower and more expensive to run.</p>
+  </div>
+
+  <div class="gl-term" data-cat="basics">
+    <div class="gl-term-top"><h3>Multimodal</h3><span class="gl-cat">Basics</span></div>
+    <p class="gl-def">A model that handles more than just text — images, audio, sometimes video, as both input and output. This is why you can upload a photo to ChatGPT or Gemini and ask a question about it.</p>
+  </div>
+
+  <div class="gl-term" data-cat="basics">
+    <div class="gl-term-top"><h3>Open-source / open-weight model</h3><span class="gl-cat">Basics</span></div>
+    <p class="gl-def">A model whose underlying weights are published for anyone to download and run on their own hardware, rather than only accessible through one company's app. DeepSeek is the best-known example covered on this site — see our <a href="articles/deepseek-vs-chatgpt-vs-claude.html">full DeepSeek guide</a>.</p>
+  </div>
+
+  <div class="gl-term" data-cat="basics">
+    <div class="gl-term-top"><h3>Fine-tuning</h3><span class="gl-cat">Basics</span></div>
+    <p class="gl-def">Further training an existing model on a narrower, specific dataset to specialize it — for example, tuning a general model to be especially good at legal writing or customer support responses.</p>
+  </div>
+
+  <div class="gl-term" data-cat="basics">
+    <div class="gl-term-top"><h3>Temperature</h3><span class="gl-cat">Basics</span></div>
+    <p class="gl-def">A setting (mostly relevant to developers using an API) that controls how "creative" versus predictable a model's output is. Low temperature gives safer, more repetitive answers; high temperature gives more varied, occasionally stranger ones.</p>
+  </div>
+
+  <div class="gl-term" data-cat="prompting">
+    <div class="gl-term-top"><h3>Prompt engineering</h3><span class="gl-cat">Prompting</span></div>
+    <p class="gl-def">The skill of writing instructions that reliably get good results from an AI — role, task, context and format is the core formula. See our full <a href="articles/how-to-write-better-ai-prompts.html">prompt-writing guide</a>.</p>
+  </div>
+
+  <div class="gl-term" data-cat="prompting">
+    <div class="gl-term-top"><h3>System prompt</h3><span class="gl-cat">Prompting</span></div>
+    <p class="gl-def">Standing instructions set once that shape every response in a conversation — "always answer in bullet points," "you are a patient tutor." Custom GPTs, Gems and Projects are all built around a system prompt you set once.</p>
+  </div>
+
+  <div class="gl-term" data-cat="prompting">
+    <div class="gl-term-top"><h3>Few-shot prompting</h3><span class="gl-cat">Prompting</span></div>
+    <p class="gl-def">Showing the AI one or two examples of exactly the output style you want, rather than only describing it in words. Consistently more effective than description alone — "here's an email I like the tone of, write a new one in the same style."</p>
+  </div>
+
+  <div class="gl-term" data-cat="prompting">
+    <div class="gl-term-top"><h3>Chain-of-thought</h3><span class="gl-cat">Prompting</span></div>
+    <p class="gl-def">Asking a model to "think step by step" before giving a final answer — this measurably improves accuracy on math, logic and planning tasks, and lets you see exactly where its reasoning went wrong if the answer is off.</p>
+  </div>
+
+  <div class="gl-term" data-cat="prompting">
+    <div class="gl-term-top"><h3>Prompt injection</h3><span class="gl-cat">Prompting</span></div>
+    <p class="gl-def">A security risk where hidden text (in a webpage, document or email) tries to hijack an AI agent's instructions — for example, a webpage secretly telling an AI browsing it to "ignore previous instructions and do X." Relevant mainly to AI agents that can browse or take actions, not plain chat.</p>
+  </div>
+
+  <div class="gl-term" data-cat="features">
+    <div class="gl-term-top"><h3>Agentic AI</h3><span class="gl-cat">Features</span></div>
+    <p class="gl-def">An AI that doesn't just answer — it takes multi-step actions on your behalf: reading files, running commands, editing code, browsing the web. Claude Code is the clearest example on this site; see our <a href="articles/how-to-use-claude-code.html">Claude Code guide</a> and <a href="articles/best-ai-coding-assistants.html">agentic vs autocomplete coding tools</a>.</p>
+  </div>
+
+  <div class="gl-term" data-cat="features">
+    <div class="gl-term-top"><h3>RAG (Retrieval-Augmented Generation)</h3><span class="gl-cat">Features</span></div>
+    <p class="gl-def">A technique where a model answers by first retrieving relevant information from a specific source (your documents, the live web) rather than relying only on its training data — this is why NotebookLM invents far fewer facts: it's answering from what you actually gave it.</p>
+  </div>
+
+  <div class="gl-term" data-cat="features">
+    <div class="gl-term-top"><h3>Custom GPT / Gem / Project</h3><span class="gl-cat">Features</span></div>
+    <p class="gl-def">Each major assistant's name for a reusable, pre-configured mini-assistant: ChatGPT calls them Custom GPTs, Gemini calls them Gems, Claude calls them Projects. All are the same underlying idea — a system prompt plus optional files, saved so you don't retype the setup every time.</p>
+  </div>
+
+  <div class="gl-term" data-cat="features">
+    <div class="gl-term-top"><h3>API</h3><span class="gl-cat">Features</span></div>
+    <p class="gl-def">The way developers connect their own apps directly to an AI model, rather than using the company's chat website. If a tool on this site "uses GPT" or "is powered by Claude" under the hood, it's almost always via an API.</p>
+  </div>
+
+  <div class="gl-term" data-cat="features">
+    <div class="gl-term-top"><h3>Rate limit</h3><span class="gl-cat">Features</span></div>
+    <p class="gl-def">The cap on how much you can use a tool for free in a given period — Claude's tight daily message cap versus Gemini's more generous one is a rate-limit difference we cover throughout our comparison articles.</p>
+  </div>
+
+  <div class="gl-term" data-cat="features">
+    <div class="gl-term-top"><h3>Deep Research</h3><span class="gl-cat">Features</span></div>
+    <p class="gl-def">A mode (in ChatGPT, Gemini and similar) that browses many sources and compiles a structured report on a topic, rather than answering from memory alone — a genuinely useful starting point for research, provided you still verify sources.</p>
+  </div>
+
+  <div class="gl-term" data-cat="features">
+    <div class="gl-term-top"><h3>Voice mode</h3><span class="gl-cat">Features</span></div>
+    <p class="gl-def">Real-time spoken conversation with an AI assistant, as opposed to typing — ChatGPT's is generally considered the most natural in back-and-forth conversation among the major assistants.</p>
+  </div>
+
+  <div class="gl-term" data-cat="features">
+    <div class="gl-term-top"><h3>Free tier</h3><span class="gl-cat">Features</span></div>
+    <p class="gl-def">The no-cost version of a tool, usually with a usage cap (a rate limit) or feature restrictions compared to a paid plan. Nearly every tool reviewed on this site has one worth trying before you consider paying anything.</p>
+  </div>
+
+  <div class="gl-term" data-cat="features">
+    <div class="gl-term-top"><h3>ATS (Applicant Tracking System)</h3><span class="gl-cat">Features</span></div>
+    <p class="gl-def">The software many employers use to automatically scan resumes before a human sees them — why "ATS-friendly formatting" matters so much in resume tools. See our <a href="articles/best-ai-resume-builders.html">AI resume builder roundup</a>.</p>
+  </div>
+
+  <div class="gl-term" data-cat="features">
+    <div class="gl-term-top"><h3>Spaced repetition</h3><span class="gl-cat">Features</span></div>
+    <p class="gl-def">A study technique where you review a flashcard right before you're likely to forget it, rather than on a fixed schedule — the core idea behind Anki and most flashcard apps' scheduling algorithms. See our <a href="articles/best-ai-flashcard-study-apps.html">flashcard app roundup</a>.</p>
+  </div>
+
+  <div class="gl-term" data-cat="trust">
+    <div class="gl-term-top"><h3>AI detector</h3><span class="gl-cat">Trust &amp; Safety</span></div>
+    <p class="gl-def">A tool (GPTZero, Turnitin, Originality.ai) that estimates the probability a text was AI-written, based on statistical patterns — a useful first signal, not proof. See our full <a href="articles/best-ai-content-detectors.html">guide to AI detectors and their real limits</a>.</p>
+  </div>
+
+  <div class="gl-term" data-cat="trust">
+    <div class="gl-term-top"><h3>Perplexity (the metric)</h3><span class="gl-cat">Trust &amp; Safety</span></div>
+    <p class="gl-def">Not to be confused with the AI search engine of the same name — this is a statistical measure of how "predictable" a piece of text is to a model. AI detectors use low perplexity (very predictable wording) as one signal that text may be AI-generated.</p>
+  </div>
+
+  <div class="gl-term" data-cat="trust">
+    <div class="gl-term-top"><h3>Burstiness</h3><span class="gl-cat">Trust &amp; Safety</span></div>
+    <p class="gl-def">How much sentence length and rhythm varies across a text. Human writing tends to be "burstier" (more variation); AI text tends to be more uniform — another signal AI detectors rely on, and another reason detector scores aren't proof on their own.</p>
+  </div>
+
+  <div class="gl-term" data-cat="trust">
+    <div class="gl-term-top"><h3>False positive (AI detection)</h3><span class="gl-cat">Trust &amp; Safety</span></div>
+    <p class="gl-def">When a detector flags genuinely human-written text as AI-generated — documented to happen disproportionately to non-native English writers, since simpler sentence structure can look statistically similar to AI output. Covered in depth in our <a href="articles/best-ai-content-detectors.html">AI detectors guide</a>.</p>
+  </div>
+
+</div>
+<p class="no-results" id="glnone">No terms match your search — try a different word.</p>
+
+<div class="ad-slot">Ad space — AdSense responsive unit</div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="index.html" style="color:#fff">AI<span>Guide</span><span class="dz">DZ</span></a>
+      <p>Practical AI tutorials and tech guides for students and beginners. Learn the tools, skip the hype.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="articles/best-free-ai-tools-for-students.html">Free AI Tools</a></li>
+        <li><a href="articles/chatgpt-vs-claude.html">ChatGPT vs Claude</a></li>
+        <li><a href="guides.html">All Guides</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>More</h4>
+      <ul>
+        <li><a href="reviews.html">Tool Reviews</a></li>
+        <li><a href="ai-tool-finder.html">Tool Finder Quiz</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 AIGuideDZ.com — All rights reserved.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var input = document.getElementById('glsearch');
+  var filterWrap = document.getElementById('glfilters');
+  var terms = Array.prototype.slice.call(document.querySelectorAll('.gl-term'));
+  var none = document.getElementById('glnone');
+  var cat = 'all';
+
+  function apply() {
+    var q = input.value.trim().toLowerCase();
+    var shown = 0;
+    terms.forEach(function (el) {
+      var okCat = (cat === 'all') || (el.getAttribute('data-cat') === cat);
+      var okText = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
+      var show = okCat && okText;
+      el.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+    none.style.display = shown ? 'none' : 'block';
+  }
+
+  input.addEventListener('input', apply);
+  filterWrap.addEventListener('click', function (e) {
+    var btn = e.target.closest('button');
+    if (!btn) return;
+    filterWrap.querySelectorAll('button').forEach(function (b) { b.classList.remove('on'); });
+    btn.classList.add('on');
+    cat = btn.getAttribute('data-cat');
+    apply();
+  });
+})();
+</script>
+
+<script src="js/analytics.js"></script>
+<script src="js/lang.js"></script>
+</body>
+</html>

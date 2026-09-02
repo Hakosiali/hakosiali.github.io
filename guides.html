@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Guides — AIGuideDZ</title>
+  <meta name="description" content="Browse every AIGuideDZ guide: AI tutorials, free tool roundups, comparisons, prompts, and student tech buying guides. Search and filter by topic.">
+  <link rel="canonical" href="https://aiguidedz.sialihako.workers.dev/guides.html">
+  <meta property="og:title" content="All Guides — AIGuideDZ">
+  <meta property="og:description" content="Every AI tutorial, tool roundup and tech guide in one place.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://aiguidedz.sialihako.workers.dev/assets/og-image.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    .guides-tools { max-width: 900px; margin: 0 auto 1.5rem; padding: 0 1rem; }
+    .guides-search {
+      width: 100%; padding: .85rem 1.1rem; font-size: 1.05rem;
+      border: 2px solid #c7c9f7; border-radius: 10px; outline: none;
+    }
+    .guides-search:focus { border-color: #5a4ff0; }
+    .guide-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .9rem; }
+    .guide-filters button {
+      border: 1px solid #c7c9f7; background: #fff; color: #333;
+      padding: .35rem .9rem; border-radius: 999px; cursor: pointer; font-size: .9rem;
+    }
+    .guide-filters button.on { background: #5a4ff0; color: #fff; border-color: #5a4ff0; }
+    .guide-list { max-width: 900px; margin: 0 auto 3rem; padding: 0 1rem; display: grid; gap: 1rem; }
+    .guide-item {
+      display: block; border: 1px solid #e4e6f5; border-radius: 12px;
+      padding: 1.1rem 1.3rem; text-decoration: none; color: inherit;
+      background: #fff; transition: box-shadow .15s, transform .15s;
+    }
+    .guide-item:hover { box-shadow: 0 6px 18px rgba(90,79,240,.12); transform: translateY(-2px); }
+    .guide-item h3 { margin: 0 0 .3rem; font-size: 1.12rem; color: #23235b; }
+    .guide-item p { margin: 0; font-size: .93rem; color: #555; }
+    .guide-item .gtag {
+      display: inline-block; font-size: .74rem; letter-spacing: .04em; text-transform: uppercase;
+      color: #5a4ff0; font-weight: 700; margin-bottom: .35rem;
+    }
+    .no-results { text-align: center; color: #666; padding: 2rem 0; display: none; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">AI<span>Guide</span><span class="dz">DZ</span></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="guides.html" class="active">All Guides</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="ai-tool-finder.html">Tool Finder</a></li>
+      <li><a href="articles/best-free-ai-tools-for-students.html">AI Tools</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:1.5rem;">
+  <h1>All <em>guides</em></h1>
+  <p>Every tutorial, tool roundup and buying guide we've published — search or filter by topic.</p>
+</section>
+
+<div class="guides-tools">
+  <input class="guides-search" id="gsearch" type="search" placeholder="🔍 Search guides… (e.g. ChatGPT, prompts, laptop)" aria-label="Search guides">
+  <div class="guide-filters" id="gfilters">
+    <button class="on" data-cat="all">All</button>
+    <button data-cat="tutorial">Tutorials</button>
+    <button data-cat="tools">Tool Roundups</button>
+    <button data-cat="comparison">Comparisons</button>
+    <button data-cat="tech">Tech Buying</button>
+    <button data-cat="productivity">Productivity</button>
+  </div>
+</div>
+
+<div class="guide-list" id="glist">
+
+  <a class="guide-item" data-cat="tools" href="articles/best-free-ai-tools-for-students.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>10 Best Free AI Tools for Students in 2026 (Tested &amp; Ranked)</h3>
+    <p>The free tier is where everyone should start — these ten earn a place in any study stack.</p>
+  </a>
+
+  <a class="guide-item" data-cat="comparison" href="articles/chatgpt-vs-claude.html">
+    <span class="gtag">Comparison</span>
+    <h3>ChatGPT vs Claude (2026): Which AI Should You Actually Use?</h3>
+    <p>Writing, coding, research, free plans and pricing — compared honestly.</p>
+  </a>
+
+  <a class="guide-item" data-cat="comparison" href="articles/chatgpt-vs-gemini.html">
+    <span class="gtag">Comparison</span>
+    <h3>ChatGPT vs Gemini (2026): Which Free AI Assistant Wins?</h3>
+    <p>Free plans, Google integration, research and extras — which assistant fits your life.</p>
+  </a>
+
+  <a class="guide-item" data-cat="comparison" href="articles/claude-vs-gemini.html">
+    <span class="gtag">Comparison</span>
+    <h3>Claude vs Gemini (2026): Deep Work or Google Power?</h3>
+    <p>Writing, coding, long documents and Google integration — two philosophies compared.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tutorial" href="articles/how-to-use-ai-for-essay-writing.html">
+    <span class="gtag">Tutorial</span>
+    <h3>How to Use AI for Essay Writing — Without Plagiarism</h3>
+    <p>The legitimate 6-step workflow: brainstorm, outline, draft yourself, then let AI make you better.</p>
+  </a>
+
+  <a class="guide-item" data-cat="productivity" href="articles/best-ai-note-taking-apps.html">
+    <span class="gtag">Productivity</span>
+    <h3>7 Best AI Note-Taking Apps in 2026 (Free Tiers Compared)</h3>
+    <p>NotebookLM, Notion, Obsidian, Otter and more — auto-summaries and study features compared.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-ai-presentation-makers.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>7 Best AI Presentation &amp; Slide Makers in 2026</h3>
+    <p>Gamma, Tome, Canva and more — turn a prompt into a full slide deck, free tiers tested.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-free-ai-translation-tools.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>6 Best Free AI Translation Tools in 2026</h3>
+    <p>DeepL, Google Translate, ChatGPT and more — which one for documents, chat and nuance.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tutorial" href="articles/best-ai-content-detectors.html">
+    <span class="gtag">Tutorial</span>
+    <h3>Best AI Content Detectors — And Why You Shouldn't Fully Trust Them</h3>
+    <p>How AI detectors actually work, how reliable they really are, and what to know before trusting a result.</p>
+  </a>
+
+  <a class="guide-item" data-cat="comparison" href="articles/deepseek-vs-chatgpt-vs-claude.html">
+    <span class="gtag">Comparison</span>
+    <h3>DeepSeek vs ChatGPT vs Claude: Is the Free Open-Source AI Worth It?</h3>
+    <p>What DeepSeek actually is, how it compares, and the privacy trade-off nobody mentions.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-ai-coding-assistants.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>7 Best AI Coding Assistants in 2026</h3>
+    <p>GitHub Copilot, Cursor, Claude Code, Windsurf and more — which fits your editor and workflow.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tutorial" href="articles/how-to-use-perplexity-ai.html">
+    <span class="gtag">Tutorial</span>
+    <h3>How to Use Perplexity AI: The Search Engine That Cites Its Sources</h3>
+    <p>How it differs from ChatGPT and Google, and when a source-cited AI search engine wins.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-ai-music-voice-generators.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>6 Best AI Music &amp; Voice Generators in 2026</h3>
+    <p>Suno, Udio, ElevenLabs and more — full songs and realistic voiceovers, free tiers tested.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-ai-resume-builders.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>6 Best AI Resume &amp; CV Builder Tools in 2026</h3>
+    <p>Teal, Kickresume, Rezi and more — ATS-friendly formatting, free tiers tested.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-ai-website-builders.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>6 Best AI Website Builders in 2026</h3>
+    <p>Durable, 10Web, Framer AI and more — a live site in an afternoon.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-ai-flashcard-study-apps.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>6 Best AI Flashcard &amp; Study Planner Apps in 2026</h3>
+    <p>Anki, Quizlet, RemNote and more — auto-generated flashcards and spaced repetition.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-ai-apps-for-math-homework.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>7 Best AI Apps for Math &amp; Homework Help in 2026</h3>
+    <p>Step-by-step solvers, photo scanners and tutoring chatbots — tested, with honest limits.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tutorial" href="articles/how-to-use-ai-in-excel.html">
+    <span class="gtag">Tutorial</span>
+    <h3>How to Use AI in Excel: Copilot, ChatGPT &amp; Free Ways</h3>
+    <p>Formulas from plain English, data cleaning and analysis — with free options first.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tutorial" href="articles/how-to-use-gemini-beginners-guide.html">
+    <span class="gtag">Tutorial</span>
+    <h3>How to Use Google Gemini: Complete Beginner's Guide</h3>
+    <p>Setup, the 6 free features worth knowing, Gmail &amp; Docs integration and Deep Research.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-free-ai-video-tools.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>7 Best Free AI Video Tools in 2026 (Generators &amp; Editors)</h3>
+    <p>Text-to-video, AI editing, auto-captions and avatars — what each free tier really includes.</p>
+  </a>
+
+  <a class="guide-item" data-cat="productivity" href="articles/how-to-make-money-with-ai.html">
+    <span class="gtag">Productivity</span>
+    <h3>How to Make Money with AI in 2026: 7 Realistic Ways</h3>
+    <p>Freelancing, content, services and products — honest numbers, no get-rich-quick.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tutorial" href="articles/how-to-use-claude-beginners-guide.html">
+    <span class="gtag">Tutorial</span>
+    <h3>How to Use Claude AI: Complete Beginner's Guide</h3>
+    <p>Setup, Projects, Artifacts, file uploads and the best free features — in plain English.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tutorial" href="articles/how-to-use-chatgpt-beginners-guide.html">
+    <span class="gtag">Tutorial</span>
+    <h3>How to Use ChatGPT: Complete Beginner's Guide (2026)</h3>
+    <p>From first prompt to power user — the features and workflows most people never find.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tutorial" href="articles/how-to-write-better-ai-prompts.html">
+    <span class="gtag">Tutorial</span>
+    <h3>How to Write Better AI Prompts: Beginner's Guide to Prompt Engineering</h3>
+    <p>The 4-part formula and 7 techniques that instantly improve every AI answer you get.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tutorial" href="articles/how-to-use-claude-code.html">
+    <span class="gtag">Tutorial</span>
+    <h3>How to Use Claude Code: A Beginner's Guide (2026)</h3>
+    <p>The AI coding tool that reads your project and edits files — set up and first steps.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tutorial" href="articles/how-to-use-notebooklm-for-studying.html">
+    <span class="gtag">Tutorial</span>
+    <h3>How to Use NotebookLM for Studying: The Full Guide (2026)</h3>
+    <p>Turn your own notes and readings into study guides, quizzes and audio overviews.</p>
+  </a>
+
+  <a class="guide-item" data-cat="productivity" href="articles/ai-prompts-for-excel-study-business.html">
+    <span class="gtag">Productivity</span>
+    <h3>50+ AI Prompts for Excel, Study &amp; Business (Copy-Paste Ready)</h3>
+    <p>A prompt library that saves hours — formulas, summaries, plans and templates.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-ai-tools-for-teachers.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>8 Best AI Tools for Teachers in 2026 (Mostly Free)</h3>
+    <p>Lesson planning, differentiation, quizzes and grading help — with honest limits.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-ai-tools-for-small-business.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>9 Best AI Tools for Small Business in 2026 (Free &amp; Cheap)</h3>
+    <p>Marketing, design, bookkeeping and admin — the stack that pays for itself.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-free-ai-image-generators.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>6 Best Free AI Image Generators in 2026 (Tested)</h3>
+    <p>Real free tiers, real output quality — which generator fits which job.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tools" href="articles/best-ai-apps-to-learn-english.html">
+    <span class="gtag">Tool Roundup</span>
+    <h3>7 Best AI Apps to Learn English in 2026 (Free &amp; Paid)</h3>
+    <p>AI has quietly become the best language tutor ever built — here's how to use it.</p>
+  </a>
+
+  <a class="guide-item" data-cat="productivity" href="articles/best-productivity-apps-for-students.html">
+    <span class="gtag">Productivity</span>
+    <h3>7 Best Productivity Apps for Students in 2026 (Mostly Free)</h3>
+    <p>Notes, focus, flashcards and planning — a study system that actually sticks.</p>
+  </a>
+
+  <a class="guide-item" data-cat="productivity" href="articles/ai-tools-for-job-search-cv.html">
+    <span class="gtag">Productivity</span>
+    <h3>How to Use AI for Your Job Search: CV, Cover Letters &amp; Interviews (2026)</h3>
+    <p>Tailor your CV, draft cover letters and rehearse interviews — without sounding like a bot.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tech" href="articles/best-budget-laptops-for-students.html">
+    <span class="gtag">Tech Buying</span>
+    <h3>Best Budget Laptops for Students: 2026 Buying Guide</h3>
+    <p>The specs that matter, the ones that don't, and picks for every budget.</p>
+  </a>
+
+  <a class="guide-item" data-cat="tech" href="articles/best-budget-phones-for-students.html">
+    <span class="gtag">Tech Buying</span>
+    <h3>Best Budget Phones for Students: 2026 Buying Guide</h3>
+    <p>Cut through the marketing — what to look for in a phone under real budgets.</p>
+  </a>
+
+</div>
+<p class="no-results" id="gnone">No guides match your search — try a different word.</p>
+
+<div class="ad-slot">Ad space — AdSense responsive unit</div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="index.html" style="color:#fff">AI<span>Guide</span><span class="dz">DZ</span></a>
+      <p>Practical AI tutorials and tech guides for students and beginners. Learn the tools, skip the hype.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="articles/best-free-ai-tools-for-students.html">Free AI Tools</a></li>
+        <li><a href="articles/chatgpt-vs-claude.html">ChatGPT vs Claude</a></li>
+        <li><a href="articles/how-to-use-claude-code.html">Claude Code Tutorial</a></li>
+        <li><a href="articles/ai-prompts-for-excel-study-business.html">AI Prompts Library</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>More</h4>
+      <ul>
+        <li><a href="glossary.html">AI Glossary</a></li>
+        <li><a href="side-hustle-finder.html">Side Hustle Quiz</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 AIGuideDZ.com — All rights reserved. As an Amazon Associate we earn from qualifying purchases.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var input = document.getElementById('gsearch');
+  var filterWrap = document.getElementById('gfilters');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.guide-item'));
+  var none = document.getElementById('gnone');
+  var cat = 'all';
+
+  function apply() {
+    var q = input.value.trim().toLowerCase();
+    var shown = 0;
+    items.forEach(function (el) {
+      var okCat = (cat === 'all') || (el.getAttribute('data-cat') === cat);
+      var okText = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
+      var show = okCat && okText;
+      el.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+    none.style.display = shown ? 'none' : 'block';
+  }
+
+  input.addEventListener('input', apply);
+  filterWrap.addEventListener('click', function (e) {
+    var btn = e.target.closest('button');
+    if (!btn) return;
+    filterWrap.querySelectorAll('button').forEach(function (b) { b.classList.remove('on'); });
+    btn.classList.add('on');
+    cat = btn.getAttribute('data-cat');
+    apply();
+  });
+})();
+</script>
+
+<script src="js/analytics.js"></script>
+<script src="js/lang.js"></script>
+</body>
+</html>
