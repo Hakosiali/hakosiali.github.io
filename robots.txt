@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aiguidedz.sialihako.workers.dev/sitemap.xml
+Sitemap: https://hakosiali.github.io/sitemap.xml
