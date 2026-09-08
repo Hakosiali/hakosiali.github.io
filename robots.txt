@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hakosiali.github.io/sitemap.xml
+Sitemap: https://aiguidedz.com/sitemap.xml
