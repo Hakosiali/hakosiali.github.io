@@ -10,63 +10,8 @@
   <meta property="og:description" content="Answer a few quick questions and get a personalized AI tool recommendation.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://aiguidedz.com/assets/og-image.png">
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=3">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <style>
-    .finder-wrap { max-width: 720px; margin: 0 auto; padding: 20px 20px 70px; }
-    .finder-card {
-      background: #fff; border: 1px solid #e4e6f5; border-radius: 18px;
-      padding: 36px 30px; box-shadow: 0 10px 40px rgba(30,27,75,.08);
-    }
-    .finder-progress { display: flex; gap: 8px; margin-bottom: 26px; }
-    .finder-progress span {
-      flex: 1; height: 5px; border-radius: 3px; background: #e4e6f5; transition: background .25s;
-    }
-    .finder-progress span.done { background: var(--primary); }
-    .finder-step { display: none; }
-    .finder-step.active { display: block; animation: fadeIn .3s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-    .finder-q { font-size: 1.35rem; font-weight: 800; margin: 0 0 6px; color: #1e1b4b; }
-    .finder-sub { color: #666; margin: 0 0 22px; font-size: .95rem; }
-    .finder-options { display: grid; gap: 12px; }
-    .finder-opt {
-      display: flex; align-items: center; gap: 14px; text-align: left;
-      border: 2px solid #e4e6f5; border-radius: 12px; padding: 14px 16px;
-      background: #fff; cursor: pointer; font-size: 1rem; font-family: inherit; color: #222;
-      transition: border-color .15s, background .15s;
-    }
-    .finder-opt:hover { border-color: var(--primary); background: var(--primary-light); }
-    .finder-opt .emoji { font-size: 1.5rem; flex-shrink: 0; }
-    .finder-opt .opt-text { display: flex; flex-direction: column; gap: 2px; }
-    .finder-opt .opt-sub { font-size: .8rem; color: #888; font-weight: 400; }
-    .finder-back {
-      margin-top: 18px; background: none; border: none; color: #888; cursor: pointer;
-      font-size: .9rem; padding: 4px 0;
-    }
-    .finder-back:hover { color: var(--primary); }
-    .result-badge {
-      display: inline-block; background: var(--primary-light); color: var(--primary-dark);
-      font-weight: 700; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase;
-      padding: 5px 12px; border-radius: 999px; margin-bottom: 14px;
-    }
-    .result-title { font-size: 1.6rem; font-weight: 800; margin: 0 0 8px; color: #1e1b4b; }
-    .result-why { color: #444; margin-bottom: 14px; line-height: 1.6; }
-    .result-tip {
-      background: var(--primary-light); border-left: 4px solid var(--primary);
-      padding: 12px 14px; border-radius: 8px; font-size: .9rem; color: #333; margin-bottom: 20px;
-    }
-    .result-links { display: grid; gap: 10px; margin-bottom: 22px; }
-    .result-links a {
-      display: block; padding: 13px 16px; border: 1px solid #e4e6f5; border-radius: 10px;
-      font-weight: 600; color: var(--primary-dark); background: var(--primary-light);
-    }
-    .result-links a:hover { background: #e0defc; }
-    .retake-btn {
-      background: none; border: 2px solid var(--primary); color: var(--primary);
-      padding: 10px 20px; border-radius: 10px; cursor: pointer; font-size: .95rem; font-weight: 600;
-    }
-    .retake-btn:hover { background: var(--primary-light); }
-  </style>
 </head>
 <body>
 
@@ -87,13 +32,14 @@
 
 <section class="hero" style="padding-bottom:1.5rem;">
   <h1>Which <em>AI tool</em> is right for you?</h1>
-  <p>A few quick questions. One honest, detailed recommendation — with full guides linked so you can start right away.</p>
+  <p>Four quick questions. One honest, detailed recommendation — with full guides linked so you can start right away.</p>
+  <p style="font-size:.9rem;"><a href="coding-assistant-finder.html">Coding-specific instead? Try our AI Coding Assistant Finder →</a></p>
 </section>
 
 <div class="finder-wrap">
   <div class="finder-card">
     <div class="finder-progress" id="finderProgress">
-      <span id="pStep1"></span><span id="pStep2"></span><span id="pStep3"></span>
+      <span id="pStep1"></span><span id="pStep2"></span><span id="pStep3"></span><span id="pStep4"></span>
     </div>
 
     <!-- STEP 1: primary use case -->
@@ -162,7 +108,46 @@
       <button class="finder-back" onclick="goToStep(1)">← Back</button>
     </div>
 
-    <!-- STEP 3: budget, common to all paths -->
+    <!-- STEP 2 variant: study type -->
+    <div class="finder-step" id="step2-study">
+      <p class="finder-q">What kind of studying are you doing?</p>
+      <p class="finder-sub">The best tool changes a lot depending on the subject.</p>
+      <div class="finder-options">
+        <button class="finder-opt" data-studytype="writing"><span class="emoji">📝</span> Essays &amp; written assignments</button>
+        <button class="finder-opt" data-studytype="stem"><span class="emoji">🔢</span> Math, science &amp; calculations</button>
+        <button class="finder-opt" data-studytype="audio"><span class="emoji">🎧</span> I learn best by listening / reviewing</button>
+      </div>
+      <button class="finder-back" onclick="goToStep(1)">← Back</button>
+    </div>
+
+    <!-- STEP 2 variant: research type -->
+    <div class="finder-step" id="step2-research">
+      <p class="finder-q">Academic paper trail, or general research?</p>
+      <p class="finder-sub">One needs citable scholarly sources, the other just needs to be fast and reliable.</p>
+      <div class="finder-options">
+        <button class="finder-opt" data-researchtype="academic"><span class="emoji">🎓</span> Academic — I need citable sources</button>
+        <button class="finder-opt" data-researchtype="general"><span class="emoji">⚡</span> General — just need reliable answers fast</button>
+      </div>
+      <button class="finder-back" onclick="goToStep(1)">← Back</button>
+    </div>
+
+    <!-- STEP 3: priority axis, common to all paths -->
+    <div class="finder-step" id="step-priority">
+      <p class="finder-q">What matters most to you in an AI tool?</p>
+      <p class="finder-sub">This fine-tunes the tip we give alongside your recommendation.</p>
+      <div class="finder-options">
+        <button class="finder-opt" data-priority="speed"><span class="emoji">⚡</span> Speed &amp; convenience</button>
+        <button class="finder-opt" data-priority="accuracy"><span class="emoji">🎯</span> Accuracy &amp; depth</button>
+        <button class="finder-opt" data-priority="privacy">
+          <span class="emoji">🔒</span>
+          <span class="opt-text">Privacy<span class="opt-sub">Don't want my data used for training</span></span>
+        </button>
+        <button class="finder-opt" data-priority="cost"><span class="emoji">🆓</span> Absolute lowest cost, no matter what</button>
+      </div>
+      <button class="finder-back" id="stepPriorityBack">← Back</button>
+    </div>
+
+    <!-- STEP 4: budget -->
     <div class="finder-step" id="step3">
       <p class="finder-q">One more thing — budget?</p>
       <p class="finder-sub">Every tool below has a free tier, but this shapes our tip.</p>
@@ -174,14 +159,15 @@
         </button>
         <button class="finder-opt" data-budget="pay"><span class="emoji">💳</span> Open to paying if it's worth it</button>
       </div>
-      <button class="finder-back" id="step3Back">← Back</button>
+      <button class="finder-back" onclick="goToStep(3)">← Back</button>
     </div>
 
     <div class="finder-step" id="stepResult">
       <span class="result-badge">Your recommendation</span>
       <h2 class="result-title" id="resTitle"></h2>
       <p class="result-why" id="resWhy"></p>
-      <div class="result-tip" id="resTip" style="display:none;"></div>
+      <div class="result-tip" id="resTipPriority" style="display:none;"></div>
+      <div class="result-tip" id="resTipBudget" style="display:none;"></div>
       <div class="result-links" id="resLinks"></div>
       <button class="retake-btn" onclick="goToStep(1)">↺ Retake the quiz</button>
     </div>
@@ -201,6 +187,7 @@
       <ul>
         <li><a href="articles/best-free-ai-tools-for-students.html">Free AI Tools</a></li>
         <li><a href="articles/chatgpt-vs-claude.html">ChatGPT vs Claude</a></li>
+        <li><a href="coding-assistant-finder.html">Coding Assistant Finder</a></li>
         <li><a href="reviews.html">Tool Reviews</a></li>
       </ul>
     </div>
@@ -226,13 +213,11 @@
 
 <script>
 (function () {
-  var state = { use: null, sub: null, budget: null };
+  var state = { use: null, sub: null, priority: null, budget: null };
 
-  // Every step id that can be shown. step2Id is set dynamically per use-case.
-  var ALL_STEPS = ['step1', 'step2-google', 'step2-coding', 'step2-visual', 'step2-audio', 'step3', 'stepResult'];
-  var progressDots = ['pStep1', 'pStep2', 'pStep3'];
+  var ALL_STEPS = ['step1', 'step2-google', 'step2-coding', 'step2-visual', 'step2-audio', 'step2-study', 'step2-research', 'step-priority', 'step3', 'stepResult'];
+  var progressDots = ['pStep1', 'pStep2', 'pStep3', 'pStep4'];
 
-  // Which step-2 variant (if any) each use case shows, and which back-target step3 goes to.
   var STEP2_FOR_USE = {
     writing: 'step2-google',
     everyday: 'step2-google',
@@ -240,8 +225,8 @@
     coding: 'step2-coding',
     visual: 'step2-visual',
     audio: 'step2-audio',
-    study: null,
-    research: null
+    study: 'step2-study',
+    research: 'step2-research'
   };
 
   function showOnly(activeId) {
@@ -258,24 +243,19 @@
 
   window.goToStep = function (n) {
     if (n === 1) {
-      state = { use: null, sub: null, budget: null };
+      state = { use: null, sub: null, priority: null, budget: null };
       showOnly('step1');
       setProgress(0);
     } else if (n === 2) {
-      var step2Id = STEP2_FOR_USE[state.use];
-      if (step2Id) {
-        showOnly(step2Id);
-        setProgress(1);
-      } else {
-        goToStep(3);
-        return;
-      }
+      showOnly(STEP2_FOR_USE[state.use]);
+      setProgress(1);
     } else if (n === 3) {
+      showOnly('step-priority');
+      setProgress(2);
+      document.getElementById('stepPriorityBack').onclick = function () { goToStep(2); };
+    } else if (n === 4) {
       showOnly('step3');
-      setProgress(STEP2_FOR_USE[state.use] ? 2 : 1);
-      document.getElementById('step3Back').onclick = function () {
-        goToStep(STEP2_FOR_USE[state.use] ? 2 : 1);
-      };
+      setProgress(3);
     }
   };
 
@@ -297,6 +277,16 @@
   });
   document.querySelectorAll('#step2-audio .finder-opt').forEach(function (btn) {
     btn.addEventListener('click', function () { state.sub = btn.getAttribute('data-audiotype'); goToStep(3); });
+  });
+  document.querySelectorAll('#step2-study .finder-opt').forEach(function (btn) {
+    btn.addEventListener('click', function () { state.sub = btn.getAttribute('data-studytype'); goToStep(3); });
+  });
+  document.querySelectorAll('#step2-research .finder-opt').forEach(function (btn) {
+    btn.addEventListener('click', function () { state.sub = btn.getAttribute('data-researchtype'); goToStep(3); });
+  });
+
+  document.querySelectorAll('#step-priority .finder-opt').forEach(function (btn) {
+    btn.addEventListener('click', function () { state.priority = btn.getAttribute('data-priority'); goToStep(4); });
   });
 
   document.querySelectorAll('#step3 .finder-opt').forEach(function (btn) {
@@ -328,7 +318,8 @@
       why: "For real software projects — not just snippets — Claude's coding models lead independent benchmarks, and Claude Code reads your whole project and edits files directly from the terminal. Cursor and Windsurf are close alternatives if you want a full graphical editor instead of the terminal.",
       links: [
         ['articles/how-to-use-claude-code.html', "How to Use Claude Code: A Beginner's Guide"],
-        ['articles/best-ai-coding-assistants.html', 'Best AI Coding Assistants: Agentic vs Autocomplete']
+        ['articles/best-ai-coding-assistants.html', 'Best AI Coding Assistants: Agentic vs Autocomplete'],
+        ['coding-assistant-finder.html', 'Want more precision? Take our Coding Assistant Finder']
       ]
     },
     coding_autocomplete: {
@@ -336,15 +327,32 @@
       why: 'For ghost-text suggestions as you type — without an AI making changes on its own — Copilot is the most established option, with a genuine free tier. Codeium is a fully free unlimited alternative if you want to try before paying for anything.',
       links: [
         ['articles/best-ai-coding-assistants.html', 'Best AI Coding Assistants: Full Comparison'],
-        ['articles/deepseek-vs-chatgpt-vs-claude.html', 'DeepSeek: A Free Alternative Worth Knowing']
+        ['articles/deepseek-vs-chatgpt-vs-claude.html', 'DeepSeek: A Free Alternative Worth Knowing'],
+        ['coding-assistant-finder.html', 'Want more precision? Take our Coding Assistant Finder']
       ]
     },
-    study: {
-      title: 'NotebookLM (plus a math app if needed)',
-      why: 'For studying from your own notes and readings, NotebookLM only answers from what you upload, which means far fewer invented facts — plus it generates quizzes and audio overviews. Add a dedicated math app if your work is calculation-heavy.',
+    study_writing: {
+      title: 'NotebookLM — plus our essay-writing guide',
+      why: 'For essays and written assignments from your own notes and readings, NotebookLM only answers from what you upload, which means far fewer invented facts than a general chatbot. Pair it with our essay-writing guide for the actual drafting process.',
       links: [
         ['articles/how-to-use-notebooklm-for-studying.html', 'How to Use NotebookLM for Studying'],
-        ['articles/best-ai-apps-for-math-homework.html', '7 Best AI Apps for Math & Homework Help']
+        ['articles/how-to-use-ai-for-essay-writing.html', 'How to Use AI for Essay Writing — Without Plagiarism']
+      ]
+    },
+    study_stem: {
+      title: 'A dedicated math app first, NotebookLM for notes',
+      why: 'For calculation-heavy work, a specialist math app that shows step-by-step solutions serves you better than a general chatbot. Keep NotebookLM on hand for organizing lecture notes and generating practice quizzes from them.',
+      links: [
+        ['articles/best-ai-apps-for-math-homework.html', '7 Best AI Apps for Math & Homework Help'],
+        ['articles/how-to-use-notebooklm-for-studying.html', 'How to Use NotebookLM for Studying']
+      ]
+    },
+    study_audio: {
+      title: "NotebookLM's Audio Overview is your best fit",
+      why: "If you learn best by listening, NotebookLM can turn your own notes and readings into a podcast-style discussion you can review on a walk or commute — a narrow, purpose-built agent that needs no prompting once you upload your sources.",
+      links: [
+        ['articles/how-to-use-notebooklm-for-studying.html', 'How to Use NotebookLM for Studying'],
+        ['articles/what-are-ai-agents.html', 'What Are AI Agents? A Plain-English Guide']
       ]
     },
     business_yes: {
@@ -394,12 +402,19 @@
         ['articles/best-ai-music-voice-generators.html', 'Best AI Music & Voice Generators: Full Comparison']
       ]
     },
-    research: {
+    research_academic: {
+      title: 'Perplexity, in Academic focus mode',
+      why: 'Built around search and citation as its core product, Perplexity gives every answer numbered sources you can actually check. Switch on Academic focus mode specifically to weight results toward scholarly sources over blogs and forums.',
+      links: [
+        ['articles/how-to-use-perplexity-ai.html', 'How to Use Perplexity AI: Full Guide']
+      ]
+    },
+    research_general: {
       title: 'Perplexity is your best fit',
-      why: "Built around search and citation as its core product — every answer comes with numbered sources you can check, unlike a general chatbot's occasional web search. Use Academic focus mode for scholarly sources specifically.",
+      why: "For general research that needs to be reliable fast, Perplexity's cited-source answers beat a general chatbot's occasional web search. ChatGPT's browsing and deep-research modes are a solid backup if you want a second opinion compiled from many sources.",
       links: [
         ['articles/how-to-use-perplexity-ai.html', 'How to Use Perplexity AI: Full Guide'],
-        ['articles/how-to-use-ai-for-essay-writing.html', 'Turning sourced research into your own essay']
+        ['articles/chatgpt-vs-claude.html', 'ChatGPT vs Claude: research & long documents compared']
       ]
     },
     everyday_yes: {
@@ -420,29 +435,42 @@
     }
   };
 
+  var PRIORITY_TIPS = {
+    speed: '⚡ Speed matters most to you — stick with whichever pick above has the best free mobile app, since being one tap away beats a technically "better" tool you rarely open.',
+    accuracy: '🎯 Since accuracy and depth matter most, always sanity-check anything important with a second source — even the strongest AI models still make confident mistakes.',
+    privacy: "🔒 Privacy is your top priority: look for a \"don't use my conversations to train models\" toggle in Settings on whichever tool you pick, or go further with DeepSeek's open-source models run locally via Ollama or LM Studio, so nothing ever leaves your device.",
+    cost: '🆓 You need $0, period — good news: every recommendation above has a genuinely usable free tier with no credit card required.'
+  };
+
   var BUDGET_TIPS = {
-    free: 'Good news — everything here has a genuinely usable free tier, no card required.',
-    opensource: 'Worth trying alongside your main pick: DeepSeek is free with no tight daily cap, and the model is open-source, meaning it can be self-hosted with zero data leaving your device.',
-    pay: "If you're open to paying, the pro tiers (~$20/month) meaningfully raise usage limits and unlock stronger models — but try the free tier for a week first. Most people never need to upgrade."
+    free: '💡 Good news — everything here has a genuinely usable free tier, no card required.',
+    opensource: '💡 Worth trying alongside your main pick: DeepSeek is free with no tight daily cap, and the model is open-source, meaning it can be self-hosted with zero data leaving your device.',
+    pay: "💡 If you're open to paying, the pro tiers (~$20/month) meaningfully raise usage limits and unlock stronger models — but try the free tier for a week first. Most people never need to upgrade."
   };
 
   function showResult() {
-    var key = state.use;
-    if (STEP2_FOR_USE[state.use] && state.sub) {
-      key = state.use + '_' + state.sub;
-    }
+    var key = state.use + '_' + state.sub;
     var r = RESULTS[key] || RESULTS.everyday_no;
 
     document.getElementById('resTitle').textContent = r.title;
     document.getElementById('resWhy').textContent = r.why;
 
-    var tipEl = document.getElementById('resTip');
-    var tipText = BUDGET_TIPS[state.budget];
-    if (tipText) {
-      tipEl.textContent = '💡 ' + tipText;
-      tipEl.style.display = 'block';
+    var priorityEl = document.getElementById('resTipPriority');
+    var priorityText = PRIORITY_TIPS[state.priority];
+    if (priorityText) {
+      priorityEl.textContent = priorityText;
+      priorityEl.style.display = 'block';
     } else {
-      tipEl.style.display = 'none';
+      priorityEl.style.display = 'none';
+    }
+
+    var budgetEl = document.getElementById('resTipBudget');
+    var budgetText = BUDGET_TIPS[state.budget];
+    if (budgetText) {
+      budgetEl.textContent = budgetText;
+      budgetEl.style.display = 'block';
+    } else {
+      budgetEl.style.display = 'none';
     }
 
     var linksEl = document.getElementById('resLinks');
@@ -460,7 +488,7 @@
     });
 
     showOnly('stepResult');
-    setProgress(3);
+    setProgress(4);
   }
 })();
 </script>

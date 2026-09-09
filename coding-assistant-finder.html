@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Which AI Coding Assistant Is Right for You? Free Quiz — AIGuideDZ</title>
+  <meta name="description" content="Claude Code, Cursor, GitHub Copilot, Windsurf, Codeium or DeepSeek Coder? Answer three quick questions and get a personalized AI coding assistant recommendation.">
+  <link rel="canonical" href="https://aiguidedz.com/coding-assistant-finder.html">
+  <meta property="og:title" content="Which AI Coding Assistant Is Right for You? Free Quiz">
+  <meta property="og:description" content="Claude Code, Cursor, Copilot, Windsurf, Codeium or DeepSeek — answer 3 questions to find your fit.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://aiguidedz.com/assets/og-image.png">
+  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">AI<span>Guide</span><span class="dz">DZ</span></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="guides.html">All Guides</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="ai-tool-finder.html">Tool Finder</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:1.5rem;">
+  <h1>Which <em>AI coding assistant</em> fits you?</h1>
+  <p>Three quick questions. Claude Code, Cursor, Copilot, Windsurf, Codeium or DeepSeek Coder — matched to how you actually want to work.</p>
+  <p style="font-size:.9rem;"><a href="ai-tool-finder.html">Looking for a general AI tool instead? Try our main Tool Finder →</a></p>
+</section>
+
+<div class="finder-wrap">
+  <div class="finder-card">
+    <div class="finder-progress" id="finderProgress">
+      <span id="pStep1"></span><span id="pStep2"></span><span id="pStep3"></span>
+    </div>
+
+    <!-- STEP 1: mode -->
+    <div class="finder-step active" id="cafStep1">
+      <p class="finder-q">How do you want AI to help with your code?</p>
+      <p class="finder-sub">Pick the closest match — you can go back anytime.</p>
+      <div class="finder-options">
+        <button class="finder-opt" data-mode="agentic">
+          <span class="emoji">🤖</span>
+          <span class="opt-text">Edit files &amp; run tasks for me<span class="opt-sub">Agentic — describe the task, review the diff</span></span>
+        </button>
+        <button class="finder-opt" data-mode="autocomplete">
+          <span class="emoji">⌨️</span>
+          <span class="opt-text">Suggest as I type, I stay in control<span class="opt-sub">In-editor autocomplete</span></span>
+        </button>
+        <button class="finder-opt" data-mode="chat">
+          <span class="emoji">💬</span>
+          <span class="opt-text">Paste code and ask questions<span class="opt-sub">Regular chat — best for learning</span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2: agentic -->
+    <div class="finder-step" id="cafStep2-agentic">
+      <p class="finder-q">Terminal, or a full graphical editor?</p>
+      <p class="finder-sub">Both are agentic — this is just where you'd rather work.</p>
+      <div class="finder-options">
+        <button class="finder-opt" data-env="terminal"><span class="emoji">⌨️</span> Terminal — describe the task, review the diff</button>
+        <button class="finder-opt" data-env="editor"><span class="emoji">🖥️</span> Full editor — file tree, extensions, debugger</button>
+      </div>
+      <button class="finder-back" onclick="cafGoTo(1)">← Back</button>
+    </div>
+
+    <!-- STEP 2: autocomplete -->
+    <div class="finder-step" id="cafStep2-autocomplete">
+      <p class="finder-q">Completely free &amp; unlimited, or the most widely integrated option?</p>
+      <p class="finder-sub">This is the real trade-off between the two leading autocomplete tools.</p>
+      <div class="finder-options">
+        <button class="finder-opt" data-pref="free_unlimited"><span class="emoji">🆓</span> Free &amp; unlimited, any editor</button>
+        <button class="finder-opt" data-pref="widely_integrated"><span class="emoji">🌐</span> Most widely used &amp; integrated</button>
+      </div>
+      <button class="finder-back" onclick="cafGoTo(1)">← Back</button>
+    </div>
+
+    <!-- STEP 2: chat -->
+    <div class="finder-step" id="cafStep2-chat">
+      <p class="finder-q">Best writing quality, or the widest ecosystem of extras?</p>
+      <p class="finder-sub">For plain chat, this is what actually separates the two.</p>
+      <div class="finder-options">
+        <button class="finder-opt" data-chatpref="claude"><span class="emoji">🟣</span> Careful, well-explained answers</button>
+        <button class="finder-opt" data-chatpref="chatgpt"><span class="emoji">🟢</span> Widest ecosystem &amp; integrations</button>
+      </div>
+      <button class="finder-back" onclick="cafGoTo(1)">← Back</button>
+    </div>
+
+    <!-- STEP 3: budget -->
+    <div class="finder-step" id="cafStep3">
+      <p class="finder-q">One more thing — budget?</p>
+      <p class="finder-sub">Every tool below has a free tier, but this shapes our tip.</p>
+      <div class="finder-options">
+        <button class="finder-opt" data-budget="free"><span class="emoji">🆓</span> Free tools only</button>
+        <button class="finder-opt" data-budget="opensource">
+          <span class="emoji">🔓</span>
+          <span class="opt-text">Curious about free/open-source AI<span class="opt-sub">No usage caps, self-hostable</span></span>
+        </button>
+        <button class="finder-opt" data-budget="pay"><span class="emoji">💳</span> Open to paying if it's worth it</button>
+      </div>
+      <button class="finder-back" id="cafStep3Back">← Back</button>
+    </div>
+
+    <div class="finder-step" id="cafStepResult">
+      <span class="result-badge">Your recommendation</span>
+      <h2 class="result-title" id="cafResTitle"></h2>
+      <p class="result-why" id="cafResWhy"></p>
+      <div class="result-tip" id="cafResTip" style="display:none;"></div>
+      <div class="result-links" id="cafResLinks"></div>
+      <button class="retake-btn" onclick="cafGoTo(1)">↺ Retake the quiz</button>
+    </div>
+  </div>
+</div>
+
+<div class="ad-slot">Ad space — AdSense responsive unit</div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="index.html" style="color:#fff">AI<span>Guide</span><span class="dz">DZ</span></a>
+      <p>Practical AI tutorials and tech guides for students and beginners. Learn the tools, skip the hype.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="articles/best-ai-coding-assistants.html">Best AI Coding Assistants</a></li>
+        <li><a href="articles/how-to-use-claude-code.html">Claude Code Tutorial</a></li>
+        <li><a href="ai-tool-finder.html">General AI Tool Finder</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>More</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 AIGuideDZ.com — All rights reserved.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var state = { mode: null, sub: null, budget: null };
+  var ALL_STEPS = ['cafStep1', 'cafStep2-agentic', 'cafStep2-autocomplete', 'cafStep2-chat', 'cafStep3', 'cafStepResult'];
+  var progressDots = ['pStep1', 'pStep2', 'pStep3'];
+
+  function showOnly(activeId) {
+    ALL_STEPS.forEach(function (id) {
+      document.getElementById(id).classList.toggle('active', id === activeId);
+    });
+  }
+
+  function setProgress(n) {
+    progressDots.forEach(function (id, i) {
+      document.getElementById(id).classList.toggle('done', i < n);
+    });
+  }
+
+  window.cafGoTo = function (n) {
+    if (n === 1) {
+      state = { mode: null, sub: null, budget: null };
+      showOnly('cafStep1');
+      setProgress(0);
+    } else if (n === 2) {
+      showOnly('cafStep2-' + state.mode);
+      setProgress(1);
+    } else if (n === 3) {
+      showOnly('cafStep3');
+      setProgress(2);
+      document.getElementById('cafStep3Back').onclick = function () { cafGoTo(2); };
+    }
+  };
+
+  document.querySelectorAll('#cafStep1 .finder-opt').forEach(function (btn) {
+    btn.addEventListener('click', function () { state.mode = btn.getAttribute('data-mode'); cafGoTo(2); });
+  });
+  document.querySelectorAll('#cafStep2-agentic .finder-opt').forEach(function (btn) {
+    btn.addEventListener('click', function () { state.sub = btn.getAttribute('data-env'); cafGoTo(3); });
+  });
+  document.querySelectorAll('#cafStep2-autocomplete .finder-opt').forEach(function (btn) {
+    btn.addEventListener('click', function () { state.sub = btn.getAttribute('data-pref'); cafGoTo(3); });
+  });
+  document.querySelectorAll('#cafStep2-chat .finder-opt').forEach(function (btn) {
+    btn.addEventListener('click', function () { state.sub = btn.getAttribute('data-chatpref'); cafGoTo(3); });
+  });
+  document.querySelectorAll('#cafStep3 .finder-opt').forEach(function (btn) {
+    btn.addEventListener('click', function () { state.budget = btn.getAttribute('data-budget'); cafShowResult(); });
+  });
+
+  var RESULTS = {
+    agentic_terminal: {
+      title: 'Claude Code is your best fit',
+      why: "Claude Code runs in your terminal, reads your entire project, and makes coordinated multi-file changes — refactoring, fixing bugs across a codebase, writing tests, even running your build. Best for real projects, not just snippets.",
+      links: [
+        ['articles/how-to-use-claude-code.html', "How to Use Claude Code: A Beginner's Guide"],
+        ['articles/best-ai-coding-assistants.html', '7 Best AI Coding Assistants: Full Comparison']
+      ]
+    },
+    agentic_editor: {
+      title: 'Cursor is your best fit',
+      why: "A fork of VS Code built around AI from the ground up — inline chat, multi-file edits, and a \"compose\" mode similar in spirit to Claude Code but inside a full graphical editor with a file tree, extensions and a debugger. Try Windsurf first if budget is the deciding factor — its free tier has historically been more generous with premium AI actions.",
+      links: [
+        ['articles/best-ai-coding-assistants.html', '7 Best AI Coding Assistants: Full Comparison'],
+        ['articles/how-to-use-claude-code.html', 'Prefer the terminal instead? See Claude Code']
+      ]
+    },
+    autocomplete_free_unlimited: {
+      title: 'Codeium is your best fit',
+      why: "Before Windsurf became a full AI editor, Codeium built its name as a free, unlimited autocomplete plugin for existing editors — VS Code, JetBrains, Vim and more. If you don't want to switch editors and just want free inline suggestions, this is the lightest-weight option on the list.",
+      links: [
+        ['articles/best-ai-coding-assistants.html', '7 Best AI Coding Assistants: Full Comparison']
+      ]
+    },
+    autocomplete_widely_integrated: {
+      title: 'GitHub Copilot is your best fit',
+      why: "The original mainstream AI coding tool: ghost-text suggestions as you type, plus a chat panel for questions, inside VS Code, JetBrains IDEs and more. A genuinely free tier exists, and it's free for verified students and popular open-source maintainers.",
+      links: [
+        ['articles/best-ai-coding-assistants.html', '7 Best AI Coding Assistants: Full Comparison']
+      ]
+    },
+    chat_claude: {
+      title: 'Claude (regular chat) is your best fit',
+      why: "Pasting code into Claude's chat and asking for explanations, fixes, or new functions covers a huge share of what beginners and occasional coders need — and Claude tends to write more careful, better-explained code than the alternatives. This is also the best way to actually learn, since it explains its reasoning instead of editing files for you.",
+      links: [
+        ['articles/chatgpt-vs-claude.html', 'ChatGPT vs Claude: which writes better code?'],
+        ['articles/how-to-use-claude-beginners-guide.html', "How to Use Claude AI: Complete Beginner's Guide"]
+      ]
+    },
+    chat_chatgpt: {
+      title: 'ChatGPT (regular chat) is your best fit',
+      why: "For learning and one-off snippets, ChatGPT's regular chat is a polished, widely-used option with the broadest ecosystem of guides and integrations if you ever want to go further.",
+      links: [
+        ['articles/how-to-use-chatgpt-beginners-guide.html', "How to Use ChatGPT: Complete Beginner's Guide"],
+        ['articles/chatgpt-vs-claude.html', 'ChatGPT vs Claude: Which AI Should You Actually Use?']
+      ]
+    }
+  };
+
+  var BUDGET_TIPS = {
+    free: '💡 Good news — every option above has a genuinely usable free tier.',
+    opensource: '💡 Worth trying alongside your pick: DeepSeek Coder performs close to Claude on many coding benchmarks, is free with no tight daily cap, and is open-source enough to self-host.',
+    pay: "💡 If you're open to paying, agentic tools (Claude Code, Cursor) become noticeably more capable on paid tiers — but try the free tier first."
+  };
+
+  function cafShowResult() {
+    var key = state.mode + '_' + state.sub;
+    var r = RESULTS[key] || RESULTS.chat_chatgpt;
+
+    document.getElementById('cafResTitle').textContent = r.title;
+    document.getElementById('cafResWhy').textContent = r.why;
+
+    var tipEl = document.getElementById('cafResTip');
+    var tipText = BUDGET_TIPS[state.budget];
+    if (tipText) {
+      tipEl.textContent = tipText;
+      tipEl.style.display = 'block';
+    } else {
+      tipEl.style.display = 'none';
+    }
+
+    var linksEl = document.getElementById('cafResLinks');
+    linksEl.innerHTML = '';
+    var links = r.links.slice();
+    var alreadyLinksDeepSeek = links.some(function (l) { return l[0].indexOf('deepseek') !== -1; });
+    if (state.budget === 'opensource' && !alreadyLinksDeepSeek) {
+      links.push(['articles/deepseek-vs-chatgpt-vs-claude.html', 'DeepSeek vs ChatGPT vs Claude']);
+    }
+    links.forEach(function (l) {
+      var a = document.createElement('a');
+      a.href = l[0];
+      a.textContent = l[1] + ' →';
+      linksEl.appendChild(a);
+    });
+
+    showOnly('cafStepResult');
+    setProgress(3);
+  }
+})();
+</script>
+
+<script src="js/analytics.js?v=2"></script>
+<script src="js/lang.js"></script>
+</body>
+</html>

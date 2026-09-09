@@ -10,7 +10,7 @@
   <meta property="og:description" content="What you actually get for $20/month, and who should skip it.">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://aiguidedz.com/assets/og-image.png">
-  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="stylesheet" href="../css/style.css?v=3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -78,6 +78,26 @@
   </table>
   <p>The pattern across almost every row is the same: <strong>Plus doesn't unlock a different product, it removes the ceiling</strong>. Free-tier ChatGPT is the real thing, just rate-limited more aggressively and occasionally routed to an older model when demand is high.</p>
 
+  <div class="calc-widget" id="plusCalc">
+    <h3>🧮 Should you upgrade? Quick calculator</h3>
+    <p class="calc-sub">Answer honestly — this is a rule-of-thumb based on the factors above, not a guarantee.</p>
+    <div class="calc-field">
+      <label for="calcFreq">How often do you use ChatGPT?</label>
+      <select id="calcFreq">
+        <option value="0">A few times a week</option>
+        <option value="1">About once a day</option>
+        <option value="2">Several times a day</option>
+        <option value="3">Constantly, all day</option>
+      </select>
+    </div>
+    <label class="calc-check"><input type="checkbox" id="calcLimit"> I regularly see "you've reached your limit" messages</label>
+    <label class="calc-check"><input type="checkbox" id="calcAgent"> I want Agent mode / deep research</label>
+    <label class="calc-check"><input type="checkbox" id="calcImages"> I generate a lot of images</label>
+    <label class="calc-check"><input type="checkbox" id="calcIncome"> My work or income depends on quick access</label>
+    <button type="button" class="calc-btn" id="calcBtn">Check my verdict</button>
+    <div class="calc-result" id="calcResult"></div>
+  </div>
+
   <h2 id="worth-it">Who it's actually worth it for</h2>
   <ul>
     <li><strong>You hit the free limit regularly.</strong> If you're getting "you've reached your limit" messages more than once a week, the math already favors upgrading.</li>
@@ -109,6 +129,8 @@
     <h3>🏆 Our verdict</h3>
     <p>Don't upgrade preemptively. Use the free tier until it actually limits you, then upgrade — at that point you'll know exactly which Plus feature you're paying for instead of guessing.</p>
   </div>
+
+  <div class="poll-widget" data-poll="chatgpt-plus-vs-free" data-question="Are you currently paying for ChatGPT Plus?" data-options='[{"key":"yes","label":"Yes, worth it","emoji":"💳"},{"key":"no","label":"No, free covers me","emoji":"🆓"},{"key":"cancelled","label":"I cancelled it","emoji":"🔁"}]'></div>
 
   <div class="ad-slot">Ad space — AdSense responsive unit</div>
 
@@ -164,6 +186,46 @@
 
 <script src="../js/analytics.js?v=2"></script>
 <script src="../js/share.js"></script>
+<script src="../js/poll.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('calcBtn');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var freq = parseInt(document.getElementById('calcFreq').value, 10);
+    var score = freq;
+    var reasons = [];
+    if (document.getElementById('calcLimit').checked) { score += 3; reasons.push("You already hit free limits regularly — that alone usually pays for the upgrade."); }
+    if (document.getElementById('calcAgent').checked) { score += 2; reasons.push("Agent mode / deep research is Plus-only, and you said you want it."); }
+    if (document.getElementById('calcImages').checked) { score += 1; reasons.push("Heavy image generation runs into free-tier caps fast."); }
+    if (document.getElementById('calcIncome').checked) { score += 2; reasons.push("If it saves paid work time, $20 pays for itself in one use."); }
+
+    var verdictClass, title, summary;
+    if (score >= 6) {
+      verdictClass = 'verdict-yes';
+      title = '✅ Upgrade — the math favors it';
+      summary = "Based on your answers, you're using ChatGPT enough (and hitting enough of its limits) that $20/month is likely worth it.";
+    } else if (score >= 3) {
+      verdictClass = 'verdict-maybe';
+      title = '🤔 Borderline — try free for 2 more weeks first';
+      summary = "You're close to the line. Use the free tier deliberately for two weeks and count how often you actually get blocked before paying.";
+    } else {
+      verdictClass = 'verdict-no';
+      title = '🆓 Skip it — free tier covers you';
+      summary = "Your usage doesn't look heavy enough yet to justify $20/month. Save it until your habits change.";
+    }
+
+    var html = '<h4>' + title + '</h4><p>' + summary + '</p>';
+    if (reasons.length) {
+      html += '<ul>' + reasons.map(function (r) { return '<li>' + r + '</li>'; }).join('') + '</ul>';
+    }
+    var el = document.getElementById('calcResult');
+    el.className = 'calc-result show ' + verdictClass;
+    el.innerHTML = html;
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+})();
+</script>
 <script src="../js/lang.js"></script>
 </body>
 </html>
