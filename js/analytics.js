@@ -10,7 +10,7 @@
      2. Paste it into GA4_ID below.
 
    Leave both empty and nothing loads (current state). */
-var CF_TOKEN = "";
+var CF_TOKEN = "bb8ab9d563e244d89669dfcc837cab78";
 var GA4_ID = "";
 
 (function () {
