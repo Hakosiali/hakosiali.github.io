@@ -29,5 +29,8 @@ Options -Indexes
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 
+# Redirects for renamed pages
+Redirect 301 /articles/best-ai-apps-to-learn-english.html /articles/best-ai-apps-to-learn-languages.html
+
 # Custom 404 page
 ErrorDocument 404 /404.html

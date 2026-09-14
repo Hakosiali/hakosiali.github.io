@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's Your AI Productivity Score? (8-Question Quiz) — AIGuideDZ</title>
+  <meta name="description" content="An 8-question quiz on how effectively you actually use AI day-to-day — get a productivity score and a personalized reading list to close the gaps.">
+  <link rel="canonical" href="https://aiguidedz.com/ai-productivity-quiz.html">
+  <meta property="og:title" content="What's Your AI Productivity Score?">
+  <meta property="og:description" content="8 questions on how effectively you actually use AI — get a score and a personalized reading list.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://aiguidedz.com/assets/og-image.png">
+  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9896445780405201" crossorigin="anonymous"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-9896445780405201?ers=1"></script>
+  <script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  <style>
+    .quiz-progress-text { text-align: center; color: var(--text-light); font-size: .85rem; margin-bottom: 8px; }
+    .score-ring { font-size: 2.4rem; font-weight: 800; color: var(--primary); }
+    .score-bar-wrap { height: 10px; border-radius: 6px; background: var(--border); margin: 14px 0 20px; overflow: hidden; }
+    .score-bar-fill { height: 100%; background: var(--primary); border-radius: 6px; transition: width .6s ease; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">AI<span>Guide</span><span class="dz">DZ</span></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ai-guide.html">AI Guide</a></li>
+      <li><a href="business-ai-guide.html">For Business</a></li>
+      <li><a href="quizzes.html" class="active">Quizzes</a></li>
+      <li><a href="guides.html">All Guides</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:1.5rem;">
+  <h1>What's your <em>AI productivity score</em>?</h1>
+  <p>8 questions about how you actually use AI day to day — not how much you talk about it. Get a score and a reading list matched to where you'll get the most value.</p>
+</section>
+
+<div class="finder-wrap">
+  <div class="finder-card">
+    <p class="quiz-progress-text" id="qProgressText">Question 1 of 8</p>
+    <div class="finder-progress" id="finderProgress"></div>
+
+    <div id="quizQuestions"></div>
+
+    <div class="finder-step" id="quizResult">
+      <span class="result-badge">Your score</span>
+      <h2 class="result-title"><span class="score-ring" id="quizScoreNum">0</span> / 16</h2>
+      <div class="score-bar-wrap"><div class="score-bar-fill" id="scoreBarFill" style="width:0%"></div></div>
+      <h3 id="quizTierTitle" style="margin-bottom:10px;"></h3>
+      <p class="result-why" id="quizTierWhy"></p>
+      <div class="result-links" id="quizResultLinks"></div>
+      <button class="retake-btn" onclick="location.reload()">↺ Retake the quiz</button>
+    </div>
+  </div>
+</div>
+
+<div class="ad-slot">Ad space — AdSense responsive unit</div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="index.html" style="color:#fff">AI<span>Guide</span><span class="dz">DZ</span></a>
+      <p>Practical AI tutorials and tech guides for students and beginners. Learn the tools, skip the hype.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="ai-guide.html">The Complete AI Guide</a></li>
+        <li><a href="articles/how-to-write-better-ai-prompts.html">Better AI Prompts</a></li>
+        <li><a href="articles/best-ai-chrome-extensions-for-students.html">AI Chrome Extensions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>More</h4>
+      <ul>
+        <li><a href="quizzes.html">All Quizzes</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+        <li><a href="javascript:void(0)" onclick="if (window.googlefc && googlefc.showRevocationMessage) { googlefc.showRevocationMessage(); } return false;">Cookie Settings</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 AIGuideDZ.com — All rights reserved.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var QUESTIONS = [
+    {
+      q: "How often do you use AI for tasks in a typical week?",
+      opts: [["Never", 0], ["A few times", 1], ["Daily", 2]]
+    },
+    {
+      q: "When an AI chatbot gives you an answer, what do you usually do?",
+      opts: [["Copy-paste it without checking", 0], ["Skim it over", 1], ["Verify anything important before using it", 2]]
+    },
+    {
+      q: "Do you have a go-to AI tool for writing tasks?",
+      opts: [["No, I start from scratch each time", 0], ["Sometimes I think to use one", 1], ["Yes, and I know its quirks", 2]]
+    },
+    {
+      q: "How do you usually write your AI prompts?",
+      opts: [["Whatever comes to mind", 0], ["I give some context", 1], ["I give context, format, and examples", 2]]
+    },
+    {
+      q: "Do you use AI for repetitive tasks (emails, summaries, data entry)?",
+      opts: [["Never thought about it", 0], ["Occasionally", 1], ["Yes, regularly", 2]]
+    },
+    {
+      q: "When an AI gives a wrong or made-up (\"hallucinated\") answer, what happens?",
+      opts: [["I usually don't notice", 0], ["I sometimes catch it", 1], ["I always fact-check anything high-stakes", 2]]
+    },
+    {
+      q: "Have you used AI tools beyond a single chatbot (image, coding, research, etc.)?",
+      opts: [["No, just one", 0], ["One or two others", 1], ["Several, across different tasks", 2]]
+    },
+    {
+      q: "Do you think about what data you're comfortable pasting into an AI tool?",
+      opts: [["Never thought about it", 0], ["Somewhat careful", 1], ["Yes, I'm deliberate about what I share", 2]]
+    }
+  ];
+
+  var current = 0;
+  var score = 0;
+  var qContainer = document.getElementById('quizQuestions');
+  var progressWrap = document.getElementById('finderProgress');
+  var progressText = document.getElementById('qProgressText');
+  var MAX_SCORE = QUESTIONS.length * 2;
+
+  QUESTIONS.forEach(function (_, i) {
+    var dot = document.createElement('span');
+    dot.id = 'qDot' + i;
+    progressWrap.appendChild(dot);
+  });
+
+  function renderQuestion(i) {
+    qContainer.innerHTML = '';
+    var q = QUESTIONS[i];
+    progressText.textContent = 'Question ' + (i + 1) + ' of ' + QUESTIONS.length;
+
+    var qEl = document.createElement('p');
+    qEl.className = 'finder-q';
+    qEl.textContent = q.q;
+    qContainer.appendChild(qEl);
+
+    var optsWrap = document.createElement('div');
+    optsWrap.className = 'finder-options';
+    q.opts.forEach(function (opt) {
+      var btn = document.createElement('button');
+      btn.className = 'finder-opt';
+      btn.textContent = opt[0];
+      btn.addEventListener('click', function () {
+        score += opt[1];
+        document.getElementById('qDot' + i).classList.add('done');
+        current++;
+        if (current < QUESTIONS.length) {
+          renderQuestion(current);
+        } else {
+          showResult();
+        }
+      });
+      optsWrap.appendChild(btn);
+    });
+    qContainer.appendChild(optsWrap);
+  }
+
+  var TIERS = [
+    {
+      min: 13, title: 'AI Power User ⚡',
+      why: "You're genuinely getting leverage from AI — deliberate prompts, cross-checked outputs, more than one tool in the rotation. There's not much low-hanging fruit left; the next gains come from going deeper on specific workflows.",
+      links: [['business-ai-guide.html', 'Push further: AI for Business'], ['articles/best-ai-coding-assistants.html', 'Explore: AI coding assistants']]
+    },
+    {
+      min: 8, title: 'Solid Foundation 👍',
+      why: "You've built real habits — regular use, decent prompts, some verification. The gap between you and a power user is mostly about breadth: trying tools beyond your current favorite, and being a bit more deliberate about prompts.",
+      links: [['articles/how-to-write-better-ai-prompts.html', 'Level up: How to Write Better AI Prompts'], ['articles/best-ai-chrome-extensions-for-students.html', 'Try these: AI Chrome extensions']]
+    },
+    {
+      min: 4, title: 'Just Getting Started 🌱',
+      why: "You're using AI, but mostly on autopilot — not yet getting the compounding value that comes from good prompts and a bit of fact-checking discipline. Small changes here go a long way fast.",
+      links: [['ai-guide.html', 'Start here: The Complete AI Guide'], ['articles/how-to-write-better-ai-prompts.html', 'The 10-minute fix: better AI prompts']]
+    },
+    {
+      min: 0, title: 'AI Curious 🐣',
+      why: "You haven't built AI into your routine yet — which is completely fine, and honestly the easiest tier to move up from. A single afternoon with the right guide changes this fast.",
+      links: [['ai-guide.html', 'Start here: The Complete AI Guide'], ['articles/how-to-use-chatgpt-beginners-guide.html', "How to Use ChatGPT: Beginner's Guide"]]
+    }
+  ];
+
+  function showResult() {
+    qContainer.style.display = 'none';
+    progressText.style.display = 'none';
+    var resultEl = document.getElementById('quizResult');
+    resultEl.classList.add('active');
+    document.getElementById('quizScoreNum').textContent = score;
+    document.getElementById('scoreBarFill').style.width = Math.round((score / MAX_SCORE) * 100) + '%';
+
+    var tier = TIERS.find(function (t) { return score >= t.min; });
+    document.getElementById('quizTierTitle').textContent = tier.title;
+    document.getElementById('quizTierWhy').textContent = tier.why;
+
+    var linksEl = document.getElementById('quizResultLinks');
+    linksEl.innerHTML = '';
+    tier.links.forEach(function (l) {
+      var a = document.createElement('a');
+      a.href = l[0];
+      a.textContent = l[1] + ' →';
+      linksEl.appendChild(a);
+    });
+  }
+
+  renderQuestion(0);
+})();
+</script>
+
+<script src="js/analytics.js?v=2"></script>
+<script src="js/lang.js"></script>
+</body>
+</html>

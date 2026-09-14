@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Literacy Quiz: How Much Do You Really Know? (10 Questions) — AIGuideDZ</title>
+  <meta name="description" content="A 10-question AI literacy quiz — test what you actually know about ChatGPT, Claude, hallucinations, prompt engineering and more, with a score and personalized reading list.">
+  <link rel="canonical" href="https://aiguidedz.com/ai-literacy-quiz.html">
+  <meta property="og:title" content="AI Literacy Quiz: How Much Do You Really Know?">
+  <meta property="og:description" content="10 questions on ChatGPT, Claude, hallucinations, prompt engineering and more — with a score at the end.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://aiguidedz.com/assets/og-image.png">
+  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9896445780405201" crossorigin="anonymous"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-9896445780405201?ers=1"></script>
+  <script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  <style>
+    .quiz-progress-text { text-align: center; color: var(--text-light); font-size: .85rem; margin-bottom: 8px; }
+    .quiz-opt.correct { border-color: var(--success) !important; background: #ecfdf5 !important; }
+    .quiz-opt.wrong { border-color: #dc2626 !important; background: #fef2f2 !important; }
+    .quiz-opt[disabled] { cursor: default; }
+    .quiz-explain { font-size: .88rem; color: var(--text-light); margin-top: 14px; padding: 12px 14px; background: var(--bg-soft); border-radius: 10px; display: none; }
+    .quiz-explain.show { display: block; animation: fadeIn .25s ease; }
+    .quiz-next-btn { margin-top: 16px; display: none; }
+    .quiz-next-btn.show { display: inline-block; }
+    .score-ring { font-size: 2.4rem; font-weight: 800; color: var(--primary); }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="index.html">AI<span>Guide</span><span class="dz">DZ</span></a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ai-guide.html">AI Guide</a></li>
+      <li><a href="business-ai-guide.html">For Business</a></li>
+      <li><a href="quizzes.html" class="active">Quizzes</a></li>
+      <li><a href="guides.html">All Guides</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:1.5rem;">
+  <h1>How much do you <em>really</em> know about AI?</h1>
+  <p>10 questions, no fluff. Test what you actually know about ChatGPT, Claude, hallucinations and prompt engineering — get your score and a reading list matched to what you missed.</p>
+</section>
+
+<div class="finder-wrap">
+  <div class="finder-card">
+    <p class="quiz-progress-text" id="qProgressText">Question 1 of 10</p>
+    <div class="finder-progress" id="finderProgress"></div>
+
+    <div id="quizQuestions"></div>
+
+    <div class="finder-step" id="quizResult">
+      <span class="result-badge">Your score</span>
+      <h2 class="result-title"><span class="score-ring" id="quizScoreNum">0</span> / 10</h2>
+      <h3 id="quizTierTitle" style="margin-bottom:10px;"></h3>
+      <p class="result-why" id="quizTierWhy"></p>
+      <div class="result-links" id="quizResultLinks"></div>
+      <button class="retake-btn" onclick="location.reload()">↺ Retake the quiz</button>
+    </div>
+  </div>
+</div>
+
+<div class="ad-slot">Ad space — AdSense responsive unit</div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-about">
+      <a class="logo" href="index.html" style="color:#fff">AI<span>Guide</span><span class="dz">DZ</span></a>
+      <p>Practical AI tutorials and tech guides for students and beginners. Learn the tools, skip the hype.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="ai-guide.html">The Complete AI Guide</a></li>
+        <li><a href="articles/best-free-ai-tools-for-students.html">Free AI Tools</a></li>
+        <li><a href="articles/chatgpt-vs-claude.html">ChatGPT vs Claude</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>More</h4>
+      <ul>
+        <li><a href="quizzes.html">All Quizzes</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+        <li><a href="javascript:void(0)" onclick="if (window.googlefc && googlefc.showRevocationMessage) { googlefc.showRevocationMessage(); } return false;">Cookie Settings</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 AIGuideDZ.com — All rights reserved.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var QUESTIONS = [
+    {
+      q: "What does \"LLM\" stand for?",
+      opts: ["Large Language Model", "Long Logic Machine", "Linear Learning Model", "Live Language Mode"],
+      correct: 0,
+      explain: "An LLM is a model trained on huge amounts of text to predict and generate language — it's the technology behind ChatGPT, Claude, and Gemini."
+    },
+    {
+      q: "Which company created ChatGPT?",
+      opts: ["Google", "Anthropic", "OpenAI", "Microsoft"],
+      correct: 2,
+      explain: "OpenAI built ChatGPT. Microsoft is a major investor and partner, and powers Copilot with OpenAI's models — but OpenAI created ChatGPT itself."
+    },
+    {
+      q: "What is an AI \"hallucination\"?",
+      opts: ["When the AI crashes", "When the AI confidently generates false or made-up information", "A type of image generator", "A security vulnerability in the app"],
+      correct: 1,
+      explain: "Hallucinations happen when an AI states something false with full confidence — no error message, no hesitation. Always verify anything important."
+    },
+    {
+      q: "Which of these is Anthropic's AI assistant?",
+      opts: ["Bard", "Gemini", "Copilot", "Claude"],
+      correct: 3,
+      explain: "Claude is Anthropic's assistant. Gemini is Google's, Copilot is Microsoft's, and Bard was Google's earlier product, since renamed to Gemini."
+    },
+    {
+      q: "What does \"prompt engineering\" mean?",
+      opts: ["Building AI hardware", "Writing an AI's underlying source code", "Crafting inputs to get better, more useful AI outputs", "Training a neural network completely from scratch"],
+      correct: 2,
+      explain: "Prompt engineering is just the skill of asking well — giving context, format and examples so the AI's answer is actually usable."
+    },
+    {
+      q: "Why shouldn't you fully trust an AI content detector's result?",
+      opts: ["It works by statistical pattern prediction, not proof of who wrote something", "It's always 100% accurate", "It reads your browser history", "It only works on images"],
+      correct: 0,
+      explain: "Detectors guess based on how statistically predictable text is — which produces real false positives, especially on simple or non-native-English writing."
+    },
+    {
+      q: "Which AI tool is best known for citing live web sources in its answers?",
+      opts: ["Midjourney", "Suno", "Perplexity", "DALL-E"],
+      correct: 2,
+      explain: "Perplexity is built around search-with-citations — every claim links back to a real source, which sets it apart from a standard chatbot."
+    },
+    {
+      q: "What is RAG (Retrieval-Augmented Generation) used for?",
+      opts: ["Making images more colorful", "Letting an AI answer using your own documents or data", "Speeding up typing", "Blocking spam emails"],
+      correct: 1,
+      explain: "RAG grounds an AI's answers in specific documents you provide — it's why tools like NotebookLM can answer accurately from your own sources."
+    },
+    {
+      q: "True or false: a free personal ChatGPT account is safe for pasting confidential company data.",
+      opts: ["True", "False"],
+      correct: 1,
+      explain: "False — consumer-tier accounts aren't built for business confidentiality guarantees. Company data needs a business/enterprise-tier tool with proper data agreements."
+    },
+    {
+      q: "What free Google tool turns your own documents into a podcast-style audio overview?",
+      opts: ["Gemini", "Docs AI", "NotebookLM", "Bard"],
+      correct: 2,
+      explain: "NotebookLM generates an audio-overview \"podcast\" discussing whatever sources you upload — genuinely useful for reviewing readings on the go."
+    }
+  ];
+
+  var current = 0;
+  var score = 0;
+  var qContainer = document.getElementById('quizQuestions');
+  var progressWrap = document.getElementById('finderProgress');
+  var progressText = document.getElementById('qProgressText');
+
+  QUESTIONS.forEach(function (_, i) {
+    var dot = document.createElement('span');
+    dot.id = 'qDot' + i;
+    progressWrap.appendChild(dot);
+  });
+
+  function renderQuestion(i) {
+    qContainer.innerHTML = '';
+    var q = QUESTIONS[i];
+    progressText.textContent = 'Question ' + (i + 1) + ' of ' + QUESTIONS.length;
+
+    var qEl = document.createElement('p');
+    qEl.className = 'finder-q';
+    qEl.textContent = q.q;
+    qContainer.appendChild(qEl);
+
+    var optsWrap = document.createElement('div');
+    optsWrap.className = 'finder-options';
+    q.opts.forEach(function (opt, oi) {
+      var btn = document.createElement('button');
+      btn.className = 'finder-opt quiz-opt';
+      btn.textContent = opt;
+      btn.addEventListener('click', function () { answer(oi, btn, optsWrap); });
+      optsWrap.appendChild(btn);
+    });
+    qContainer.appendChild(optsWrap);
+
+    var explain = document.createElement('div');
+    explain.className = 'quiz-explain';
+    explain.id = 'quizExplain';
+    explain.textContent = q.explain;
+    qContainer.appendChild(explain);
+
+    var nextBtn = document.createElement('button');
+    nextBtn.className = 'finder-back quiz-next-btn';
+    nextBtn.id = 'quizNextBtn';
+    nextBtn.textContent = (i === QUESTIONS.length - 1) ? 'See my score →' : 'Next question →';
+    nextBtn.addEventListener('click', function () {
+      current++;
+      if (current < QUESTIONS.length) {
+        renderQuestion(current);
+      } else {
+        showResult();
+      }
+    });
+    qContainer.appendChild(nextBtn);
+  }
+
+  function answer(oi, btnEl, optsWrap) {
+    var q = QUESTIONS[current];
+    var buttons = optsWrap.querySelectorAll('.quiz-opt');
+    buttons.forEach(function (b, bi) {
+      b.disabled = true;
+      if (bi === q.correct) b.classList.add('correct');
+      else if (bi === oi) b.classList.add('wrong');
+    });
+    if (oi === q.correct) score++;
+    document.getElementById('qDot' + current).classList.add('done');
+    document.getElementById('quizExplain').classList.add('show');
+    document.getElementById('quizNextBtn').classList.add('show');
+  }
+
+  var TIERS = [
+    {
+      min: 9, title: 'AI Expert 🏆',
+      why: "You clearly use these tools with your eyes open — you know the vocabulary, the limits, and the traps. You're exactly the kind of user who gets the most out of AI without getting burned by it.",
+      links: [['articles/how-to-write-better-ai-prompts.html', 'Sharpen it further: prompt engineering'], ['business-ai-guide.html', 'Take it further: AI for Business']]
+    },
+    {
+      min: 6, title: 'AI Savvy 👍',
+      why: "Solid grasp of the basics, with a few gaps worth closing. A little more time with the fundamentals and you'll be squeezing a lot more value out of these tools.",
+      links: [['ai-guide.html', 'Close the gaps: The Complete AI Guide'], ['articles/best-ai-content-detectors.html', 'Worth reading: AI content detectors explained']]
+    },
+    {
+      min: 3, title: 'Getting There 🌱',
+      why: "You know AI exists and roughly what it does — now it's time to get specific. The good news: the fundamentals take less time to learn than most people think.",
+      links: [['ai-guide.html', 'Start here: The Complete AI Guide'], ['articles/how-to-use-chatgpt-beginners-guide.html', "How to Use ChatGPT: Beginner's Guide"]]
+    },
+    {
+      min: 0, title: 'Just Starting Out 🐣',
+      why: "Everyone starts somewhere — and the fact that you took this quiz means you're curious, which is the only prerequisite that actually matters. Start with the basics and you'll be surprised how fast it clicks.",
+      links: [['ai-guide.html', 'Start here: The Complete AI Guide'], ['articles/what-are-ai-agents.html', 'Plain-English basics: What Are AI Agents?']]
+    }
+  ];
+
+  function showResult() {
+    qContainer.style.display = 'none';
+    progressText.style.display = 'none';
+    var resultEl = document.getElementById('quizResult');
+    resultEl.classList.add('active');
+    document.getElementById('quizScoreNum').textContent = score;
+
+    var tier = TIERS.find(function (t) { return score >= t.min; });
+    document.getElementById('quizTierTitle').textContent = tier.title;
+    document.getElementById('quizTierWhy').textContent = tier.why;
+
+    var linksEl = document.getElementById('quizResultLinks');
+    linksEl.innerHTML = '';
+    tier.links.forEach(function (l) {
+      var a = document.createElement('a');
+      a.href = l[0];
+      a.textContent = l[1] + ' →';
+      linksEl.appendChild(a);
+    });
+  }
+
+  renderQuestion(0);
+})();
+</script>
+
+<script src="js/analytics.js?v=2"></script>
+<script src="js/lang.js"></script>
+</body>
+</html>
