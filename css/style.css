@@ -8,16 +8,16 @@
   --primary-dark: #3730a3;
   --primary-light: #eef2ff;
   --accent: #06b6d4;
-  --text: #1e293b;
-  --text-light: #64748b;
-  --bg: #ffffff;
-  --bg-soft: #f8fafc;
-  --border: #e2e8f0;
+  --text: #293548;
+  --text-light: #5f6b81;
+  --bg: #fefeff;
+  --bg-soft: #f6f8fb;
+  --border: #e6e9f0;
   --success: #059669;
   --warning: #d97706;
   --radius: 12px;
-  --shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 14px rgba(0,0,0,.05);
-  --shadow-lg: 0 10px 30px rgba(79,70,229,.12);
+  --shadow: 0 1px 3px rgba(30,41,59,.05), 0 4px 14px rgba(30,41,59,.04);
+  --shadow-lg: 0 10px 30px rgba(79,70,229,.11);
   --max-width: 1140px;
   --content-width: 760px;
 }
@@ -30,10 +30,17 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
   background: var(--bg);
-  line-height: 1.7;
+  line-height: 1.75;
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+::selection { background: var(--primary-light); color: var(--primary-dark); }
+
+a { transition: color .15s ease; }
+
+*:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 
 img { max-width: 100%; height: auto; display: block; }
 
@@ -90,9 +97,31 @@ a:hover { text-decoration: underline; }
 
 /* ---------- Hero ---------- */
 .hero {
-  background: linear-gradient(135deg, #eef2ff 0%, #f0fdfa 100%);
-  padding: 72px 20px 80px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  padding: 96px 20px 92px;
   text-align: center;
+  isolation: isolate;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -25% -10% -35%;
+  z-index: -1;
+  background:
+    radial-gradient(38% 45% at 18% 22%, rgba(79,70,229,.30), transparent 70%),
+    radial-gradient(34% 40% at 82% 12%, rgba(6,182,212,.26), transparent 70%),
+    radial-gradient(46% 50% at 52% 78%, rgba(124,58,237,.20), transparent 70%),
+    linear-gradient(180deg, #f4f6ff 0%, #f7fbfb 60%, var(--bg) 100%);
+  filter: blur(60px) saturate(115%);
+  transform: translateZ(0);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0; z-index: -1;
+  background: radial-gradient(60% 55% at 50% 30%, rgba(255,255,255,.55), transparent 70%);
 }
 .hero h1 {
   font-size: clamp(2rem, 5vw, 3.2rem);
@@ -105,6 +134,14 @@ a:hover { text-decoration: underline; }
   max-width: 640px; margin: 0 auto 32px;
 }
 .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero::before { animation: heroDrift 22s ease-in-out infinite alternate; }
+}
+@keyframes heroDrift {
+  from { transform: translate3d(0,0,0) scale(1); }
+  to   { transform: translate3d(0,-2%,0) scale(1.04); }
+}
 
 .btn {
   display: inline-block; padding: 13px 28px; border-radius: 10px;
