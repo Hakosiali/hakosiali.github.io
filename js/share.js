@@ -5,7 +5,7 @@
   if (!bars.length) return;
 
   var url = encodeURIComponent(location.href);
-  var title = encodeURIComponent(document.title.replace(/ — AIGuideDZ$/, ''));
+  var title = encodeURIComponent(document.title.replace(/ — AI Guide$/, ''));
 
   var links = [
     { name: 'X', icon: '𝕏', href: 'https://twitter.com/intent/tweet?text=' + title + '&url=' + url },

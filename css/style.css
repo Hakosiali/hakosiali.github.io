@@ -146,7 +146,6 @@ a:hover { text-decoration: underline; }
 }
 .logo:hover { text-decoration: none; }
 .logo span { color: var(--primary); }
-.logo .dz { color: var(--accent); }
 
 .nav-links { display: flex; gap: 2px; list-style: none; align-items: center; margin-left: auto; }
 .nav-links a {
